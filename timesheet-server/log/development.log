@@ -1934,3 +1934,211 @@ Migrating to CreateUsers (20210415071448)
   [1m[36mActiveRecord::InternalMetadata Load (6.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4709995827031202925)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/timesheets" for ::1 at 2021-04-20 12:26:44 +1000
+  [1m[35m (13.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"user"=>{"username"=>"eden123", "password"=>"[FILTERED]"}, "timesheet"=>{"user"=>{"username"=>"eden123", "password"=>"[FILTERED]"}}}
+  [1m[36mTimesheets Load (7.1ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 51ms (Views: 31.6ms | ActiveRecord: 13.8ms | Allocations: 12586)
+
+
+Started GET "/api/users" for ::1 at 2021-04-20 12:27:37 +1000
+Processing by Api::UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"eden123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.7ms | Allocations: 713)
+
+
+Started POST "/api/users" for ::1 at 2021-04-20 12:28:28 +1000
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"eden123", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :username[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("password_digest") VALUES ($1) RETURNING "id"[0m  [["password_digest", "$2a$12$gJhQfJjbXh0TehtIAMuBpeJgBd5mr5QdILBlg88JcAiyaK9dGksUW"]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" IS NULL AND "users"."id" != $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+Completed 201 Created in 274ms (Views: 0.4ms | ActiveRecord: 15.1ms | Allocations: 6705)
+
+
+Started POST "/api/users" for ::1 at 2021-04-20 12:29:04 +1000
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"eden123", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "eden123"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest") VALUES ($1, $2) RETURNING "id"[0m  [["name", "eden123"], ["password_digest", "$2a$12$1Sb2wYXWqKrtsuz.D5vD7OGqprbTrgfWkNS0gd4upcU/MOyoWGhJC"]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "eden123"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+Completed 201 Created in 259ms (Views: 0.2ms | ActiveRecord: 6.7ms | Allocations: 3262)
+
+
+Started POST "/api/users" for ::1 at 2021-04-20 12:29:11 +1000
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"teddy", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "teddy"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest") VALUES ($1, $2) RETURNING "id"[0m  [["name", "teddy"], ["password_digest", "$2a$12$GF.Rf25b8b6xwQ42S6NNieyWjNG3nPRDmmWg.xnJFxG/rPzxnyiby"]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "teddy"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+Completed 201 Created in 258ms (Views: 0.2ms | ActiveRecord: 6.8ms | Allocations: 3280)
+
+
+Started POST "/api/users" for ::1 at 2021-04-20 12:29:20 +1000
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"stacey", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "stacey"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest") VALUES ($1, $2) RETURNING "id"[0m  [["name", "stacey"], ["password_digest", "$2a$12$Q8q3L80E7.COPFFvI4ch7.bB7KVik8VgZWiEeXXiTFI2rQCs/5HCW"]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "stacey"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+Completed 201 Created in 263ms (Views: 0.8ms | ActiveRecord: 7.7ms | Allocations: 3257)
+
+
+Started POST "/api/users" for ::1 at 2021-04-20 12:29:23 +1000
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"ash", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "ash"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest") VALUES ($1, $2) RETURNING "id"[0m  [["name", "ash"], ["password_digest", "$2a$12$PMVgJgE/msUP2N6X4jL54eOWPCv2k982xWX1K.g8jUslAdjkT3hj6"]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "ash"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+Completed 201 Created in 271ms (Views: 1.5ms | ActiveRecord: 9.9ms | Allocations: 3261)
+
+
+Started GET "/api/users" for ::1 at 2021-04-20 12:29:27 +1000
+Processing by Api::UsersController#index as */*
+  Parameters: {"user"=>{"name"=>"ash", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms | Allocations: 909)
+
+
+Started PUT "/api/users" for ::1 at 2021-04-20 12:29:55 +1000
+  
+ActionController::RoutingError (No route matches [PUT] "/api/users"):
+  
+Started PATCH "/api/users" for ::1 at 2021-04-20 12:30:01 +1000
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/users"):
+  
+Started GET "/api/users" for ::1 at 2021-04-20 12:30:06 +1000
+Processing by Api::UsersController#index as */*
+  Parameters: {"user"=>{"name"=>"ashish", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.5ms | Allocations: 881)
+
+
+Started PATCH "/api/users/1" for ::1 at 2021-04-20 12:30:19 +1000
+Processing by Api::UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:22:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "eden"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:22:in `update'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["name", "eden"], ["password_digest", "$2a$12$uRDc2/V3jHFhT8jzieWb/ubxzSydzGOjampRkkEHgtBwg652/5qve"], ["id", 1]]
+  ↳ app/controllers/api/users_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:22:in `update'
+Completed 200 OK in 259ms (Views: 0.1ms | ActiveRecord: 10.3ms | Allocations: 3266)
+
+
+Started GET "/api/users/1" for ::1 at 2021-04-20 12:30:23 +1000
+Processing by Api::UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:17:in `show'
+Completed 200 OK in 36ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 569)
+
+
+Started GET "/api/users" for ::1 at 2021-04-20 12:30:31 +1000
+Processing by Api::UsersController#index as */*
+  Parameters: {"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 889)
+
+
+Started DELETE "/api/users/2" for ::1 at 2021-04-20 12:30:42 +1000
+Processing by Api::UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:27:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:27:in `destroy'
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/api/users_controller.rb:27:in `destroy'
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:27:in `destroy'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 15.9ms | Allocations: 1896)
+
+
+Started DELETE "/api/timesheets" for ::1 at 2021-04-20 12:30:51 +1000
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/timesheets"):
+  
+Started GET "/api/timesheets" for ::1 at 2021-04-20 12:30:55 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}, "timesheet"=>{"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}}}
+  [1m[36mTimesheets Load (0.2ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 1723)
+
+
+Started GET "/api/timesheets/2" for ::1 at 2021-04-20 12:31:14 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}, "id"=>"2", "timesheet"=>{"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}}}
+  [1m[36mTimesheets Load (5.8ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:20:in `show'
+Completed 404 Not Found in 12ms (ActiveRecord: 5.8ms | Allocations: 647)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Timesheets with 'id'=2):
+  
+app/controllers/api/timesheets_controller.rb:20:in `show'
+Started GET "/api/timesheets" for ::1 at 2021-04-20 12:31:18 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}, "timesheet"=>{"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}}}
+  [1m[36mTimesheets Load (0.6ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.6ms | Allocations: 1723)
+
+
+Started GET "/api/timesheets/8" for ::1 at 2021-04-20 12:31:22 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}, "id"=>"8", "timesheet"=>{"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:20:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 756)
+
+
