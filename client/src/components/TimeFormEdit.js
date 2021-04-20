@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-
+import {useParams} from "react-router-dom"
 const TimeFormEdit = (props) => {
   console.log(props);
-
+const params = useParams()
+console.log(params)
   const [formState, setFormState] = useState({
     date: "",
     staff_attendance: "",
@@ -17,10 +18,10 @@ const TimeFormEdit = (props) => {
     written_by: ""
   });
 
-  useEffect(() => {
-    setFormState(props.timesheet);
-    console.log("useEffect edit");
-  }, [props.timesheet]);
+  // useEffect(() => {
+  //   setFormState(props.timesheet);
+  //   console.log("useEffect edit");
+  // }, [props.timesheet]);
 
   const handleChange = (e) => {
     const newState = { ...formState };

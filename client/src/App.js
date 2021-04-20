@@ -1,40 +1,27 @@
 import TimeContainer from "./components/TimeContainer";
 import TimeFormEdit from "./components/TimeFormEdit";
+import {List} from "./components/List"; 
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
-import './Style.css'
+import "./Style.css";
 
 export const App = () => {
   return (
     <Router>
       <div>
-        <Link to="/timesheet">Home</Link>
+        <Link to="/timesheet">Add</Link>
+        <Link to="/">Home</Link>
         <Switch>
-          <Route path="/timesheet">
-          <TimeContainer />
+          <Route exact path="/timesheet">
+            <TimeContainer />
+          </Route>
+          <Route exact path="/timesheet/edit/:id">
+            <TimeFormEdit />
+          </Route>
+          <Route exact path="/">
+            <List />
           </Route>
         </Switch>
-      </div>  
+      </div>
     </Router>
   );
 };
-
-
-<Router>
-<div className="App">
-
-<Link to="/timesheet">Home</Link>
-        <Switch>
-          <Route path="/timesheet">
-          <TimeContainer />
-          </Route>
-        </Switch>
-
-        <Link to="/timesheet/edit">Add</Link>
-        <Switch>
-          <Route path="/timesheet">
-          <TimeFormEdit />
-          </Route>
-        </Switch>
-
-</div>
-</Router>

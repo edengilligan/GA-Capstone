@@ -165,11 +165,11 @@ written_by: "",
               
       <TimeForm submit={handleTimeFormSubmit} timesheet={timesheets} />
               
-      <TimeFormEdit
+      {/* <TimeFormEdit
         submit={handleEditTimesheet}
         onDelete={handleDelete}
         timesheet={timesheetEdit}
-      />
+      /> */}
       {/* <TimeFormDelete
         submit={handleDeleteTimesheet}
         timesheet={timesheetDelete}
