@@ -28,13 +28,11 @@ console.log(params)
     newState[e.target.name] = e.target.value;
     setFormState(newState);
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("handleSubmit");
     props.submit(formState);
   };
-
   const handleDelete = () => {
     // e.preventDefault();
     props.onDelete(formState.id);
@@ -52,7 +50,6 @@ console.log(params)
      
       });
   };
-
   return (
     <div>
     <h2>Edit/Delete</h2>
@@ -68,7 +65,6 @@ console.log(params)
         ></input>
       </label>
       </div>
-
       <div>
       <label>
       <div className="clienttxt">Client</div> 
@@ -79,9 +75,6 @@ console.log(params)
         ></input>
       </label>
       </div>
-
-
-
       <div>
       <label>
       <div className="stafftxt">Staff Attendance</div> 
@@ -92,7 +85,6 @@ console.log(params)
         ></input>
       </label>
       </div>
-
      <div>
       <label>
       <div className="traveltxt">Travel Information</div> 
@@ -103,8 +95,6 @@ console.log(params)
         ></input>
       </label>
       </div>
-
-
 <div>
       <label>
       <div className="arrivaltxt">Arrival Time</div> 
@@ -115,7 +105,6 @@ console.log(params)
         ></input>
       </label>
       </div>
-
         <div>
       <label>
       <div className="departuretxt">Departure Time</div> 
@@ -126,7 +115,6 @@ console.log(params)
         ></input>
       </label>
       </div>
-
 <div>
       <label>
       <div className="productstxt">Products Used</div> 
@@ -137,7 +125,6 @@ console.log(params)
         ></input>
       </label>
       </div>
-
 <div>
       <label>
       <div className="receiptstxt">Receipts</div> 
@@ -148,7 +135,6 @@ console.log(params)
         ></input>
       </label>
       </div>
-
 <div>
       <label>
       <div className="notestxt">Notes</div> 
@@ -159,7 +145,6 @@ console.log(params)
         ></input>
       </label>
       </div>
-
 <div>
       <label>
       <div className="actiontxt">Action Next Visit</div> 
@@ -170,7 +155,6 @@ console.log(params)
         ></input>
       </label>
       </div>
-
 <div>
       <label>
       <div className="writtentxt">Written By</div> 
@@ -187,5 +171,4 @@ console.log(params)
     </div>
   );
 };
-
 export default TimeFormEdit;

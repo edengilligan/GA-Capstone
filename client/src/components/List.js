@@ -24,11 +24,11 @@ export const List = () => {
       <h1>Timesheets</h1>
       <ul>
         {timesheets.map((el, index) => (
-          <li
+          <ul
             key={index}
           >
             <Link to={`timesheet/edit/${el.id}`}>{el.client} </Link>
-          </li>
+          </ul>
         ))}
       </ul>
     </div>
