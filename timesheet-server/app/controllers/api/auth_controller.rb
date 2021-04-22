@@ -1,9 +1,13 @@
-class ApplicationController < ActionController::API
-    def encode_token user 
-        JWT.encode(user, 'super-secret-password')
-    end 
+class Api::AuthController < ApplicationController
+    def login 
 
-    def decode_token
-    end 
+    user = User.find_by(name: params[:name]) 
+    if user&.authenticate(params[:password])
 
-end 
+    render json: {user: user.name} 
+# if you wanted to expose the whole object you would put {user: user} 
+    else 
+        render json: {message: 'user or password incorrect or not found'}, status: 400 
+    end 
+end
+end
