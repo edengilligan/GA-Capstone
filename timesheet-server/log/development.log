@@ -2627,3 +2627,639 @@ Processing by Api::TimesheetsController#index as */*
 Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1937)
 
 
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:23:16 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.5ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 97ms (Views: 96.3ms | ActiveRecord: 29.6ms | Allocations: 4041)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:26:32 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:26:32 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:26:42 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:28:23 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.2ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:34:13 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.8ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 21.0ms | ActiveRecord: 6.7ms | Allocations: 3988)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:34:16 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:34:17 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:34:17 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.2ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:34:18 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:34:18 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:34:38 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:35:52 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:36:31 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:36:34 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 1938)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:36:51 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (1.9ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.9ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:36:55 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:36:57 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:36:58 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.5ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:36:59 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:37:01 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:37:20 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:37:23 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 1937)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:37:25 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1937)
+
+
+Started GET "/api/auth/login" for ::1 at 2021-04-20 20:39:06 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/api/auth/login"):
+  
+Started GET "/api/user" for ::1 at 2021-04-20 20:39:13 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/api/user"):
+  
+Started GET "/api/users" for ::1 at 2021-04-20 20:39:15 +1000
+Processing by Api::UsersController#index as */*
+  Parameters: {"user"=>{"name"=>"eden", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 4.3ms | Allocations: 2616)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:46:15 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.6ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 73ms (Views: 72.1ms | ActiveRecord: 40.3ms | Allocations: 4041)
+
+
+Started GET "/" for ::1 at 2021-04-20 20:47:38 +1000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.8ms | Allocations: 482)
+Completed 200 OK in 34ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 4254)
+
+
+Started GET "/" for ::1 at 2021-04-20 20:47:41 +1000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.2ms | Allocations: 185)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 877)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:48:40 +1000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.6ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 45ms (Views: 14.6ms | ActiveRecord: 4.6ms | Allocations: 12800)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:48:42 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1956)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:48:45 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 1956)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:48:46 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 1956)
+
+
+Started POST "/api/timesheets" for ::1 at 2021-04-20 20:48:54 +1000
+Processing by Api::TimesheetsController#create as */*
+  Parameters: {"date"=>"", "staff_attendance"=>"", "client"=>"Test76543", "travel_information"=>"", "arrival_time"=>"", "departure_time"=>"", "products_used"=>"", "receipts"=>"", "notes"=>"", "action_next_visit"=>"", "written_by"=>"", "timesheet"=>{"date"=>"", "staff_attendance"=>"", "client"=>"Test76543", "travel_information"=>"", "arrival_time"=>"", "departure_time"=>"", "products_used"=>"", "receipts"=>"", "notes"=>"", "action_next_visit"=>"", "written_by"=>""}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/timesheets_controller.rb:9:in `create'
+Started GET "/timesheet?date=&client=Test76543&staff_attendance=&travel_information=&arrival_time=&departure_time=&products_used=&receipts=&notes=&action_next_visit=&written_by=" for ::1 at 2021-04-20 20:48:54 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/timesheet"):
+  
+  [1m[36mTimesheets Create (7.3ms)[0m  [1m[32mINSERT INTO "timesheets" ("date", "client", "travel_information", "arrival_time", "departure_time", "products_used", "receipts", "notes", "action_next_visit", "written_by", "created_at", "updated_at", "staff_attendance") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["date", ""], ["client", "Test76543"], ["travel_information", ""], ["arrival_time", ""], ["departure_time", ""], ["products_used", ""], ["receipts", ""], ["notes", ""], ["action_next_visit", ""], ["written_by", ""], ["created_at", "2021-04-20 10:48:54.625875"], ["updated_at", "2021-04-20 10:48:54.625875"], ["staff_attendance", ""]]
+  ↳ app/controllers/api/timesheets_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (44.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/timesheets_controller.rb:9:in `create'
+Completed 200 OK in 60ms (Views: 0.3ms | ActiveRecord: 52.2ms | Allocations: 12899)
+
+
+Started GET "/sockjs-node" for ::1 at 2021-04-20 20:50:06 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/sockjs-node"):
+  
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:50:06 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+Started GET "/manifest.json" for ::1 at 2021-04-20 20:50:06 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+  [1m[36mTimesheets Load (4.8ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 13.5ms | ActiveRecord: 4.8ms | Allocations: 5864)
+
+
+Started GET "/api/timesheets/15" for ::1 at 2021-04-20 20:50:08 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"id"=>"15", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:20:in `show'
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 2302)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:50:11 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 2150)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:50:14 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 2152)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 20:50:15 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 2150)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:01:50 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.5ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 197ms (Views: 196.7ms | ActiveRecord: 9.4ms | Allocations: 4300)
+
+
+Started GET "/static/js/vendors~main.chunk.js.map" for ::1 at 2021-04-20 21:03:02 +1000
+Started GET "/static/js/bundle.js.map" for ::1 at 2021-04-20 21:03:02 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/vendors~main.chunk.js.map"):
+  
+Started GET "/static/js/main.chunk.js.map" for ::1 at 2021-04-20 21:03:02 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/bundle.js.map"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/main.chunk.js.map"):
+  
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:03:21 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.5ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 2149)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:05:14 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.7ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.7ms | Allocations: 2150)
+
+
+Started GET "/static/js/main.chunk.js" for ::1 at 2021-04-20 21:05:18 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/main.chunk.js"):
+  
+Started GET "/static/js/vendors~main.chunk.js" for ::1 at 2021-04-20 21:05:18 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/vendors~main.chunk.js"):
+  
+Started GET "/static/js/main.chunk.js" for ::1 at 2021-04-20 21:05:18 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/main.chunk.js"):
+  
+Started GET "/static/js/vendors~main.chunk.js" for ::1 at 2021-04-20 21:05:18 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/vendors~main.chunk.js"):
+  
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:05:49 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.8ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.8ms | Allocations: 2150)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:11:07 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.9ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.9ms | Allocations: 2150)
+
+
+Started GET "/" for ::1 at 2021-04-20 21:15:22 +1000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.0ms | Allocations: 194)
+Completed 200 OK in 28ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 1715)
+
+
+Started GET "/" for ::1 at 2021-04-20 21:15:25 +1000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.5ms | Allocations: 205)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 897)
+
+
+Started GET "/" for ::1 at 2021-04-20 21:15:58 +1000
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.1ms | Allocations: 309)
+Completed 200 OK in 31ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 2475)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:16:36 +1000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.7ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 94ms (Views: 29.2ms | ActiveRecord: 31.3ms | Allocations: 13013)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:16:52 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (16.5ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 74ms (Views: 57.2ms | ActiveRecord: 16.5ms | Allocations: 2169)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:25:00 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (1.1ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 49ms (Views: 48.4ms | ActiveRecord: 9.8ms | Allocations: 4272)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:25:03 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 2169)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:28:35 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.8ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.8ms | Allocations: 2169)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:28:47 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 2150)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:29:06 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.4ms | Allocations: 2150)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:29:10 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.4ms | Allocations: 2150)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:30:51 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.7ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.7ms | Allocations: 2150)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:30:52 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (1.6ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 1.6ms | Allocations: 2150)
+
+
+Started POST "/api/timesheets" for ::1 at 2021-04-20 21:30:58 +1000
+Processing by Api::TimesheetsController#create as */*
+  Parameters: {"date"=>"", "staff_attendance"=>"", "client"=>"Test12345", "travel_information"=>"", "arrival_time"=>"", "departure_time"=>"", "products_used"=>"", "receipts"=>"", "notes"=>"", "action_next_visit"=>"", "written_by"=>"", "timesheet"=>{"date"=>"", "staff_attendance"=>"", "client"=>"Test12345", "travel_information"=>"", "arrival_time"=>"", "departure_time"=>"", "products_used"=>"", "receipts"=>"", "notes"=>"", "action_next_visit"=>"", "written_by"=>""}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/timesheets_controller.rb:9:in `create'
+  [1m[36mTimesheets Create (20.3ms)[0m  [1m[32mINSERT INTO "timesheets" ("date", "client", "travel_information", "arrival_time", "departure_time", "products_used", "receipts", "notes", "action_next_visit", "written_by", "created_at", "updated_at", "staff_attendance") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["date", ""], ["client", "Test12345"], ["travel_information", ""], ["arrival_time", ""], ["departure_time", ""], ["products_used", ""], ["receipts", ""], ["notes", ""], ["action_next_visit", ""], ["written_by", ""], ["created_at", "2021-04-20 11:30:58.125058"], ["updated_at", "2021-04-20 11:30:58.125058"], ["staff_attendance", ""]]
+  ↳ app/controllers/api/timesheets_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/timesheets_controller.rb:9:in `create'
+Completed 200 OK in 57ms (Views: 0.2ms | ActiveRecord: 29.2ms | Allocations: 2080)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:30:58 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (3.2ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 3.2ms | Allocations: 2363)
+
+
+Started GET "/api/timesheets/16" for ::1 at 2021-04-20 21:31:01 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"id"=>"16", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:20:in `show'
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 2283)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:31:09 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.7ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.7ms | Allocations: 2363)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:31:22 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.6ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.6ms | Allocations: 2363)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-20 21:31:24 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.3ms | Allocations: 2363)
+
+
+Started GET "/" for ::1 at 2021-04-22 13:04:10 +1000
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/edengilligan/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.1ms | Allocations: 309)
+Completed 200 OK in 34ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 2475)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-22 13:19:30 +1000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (24.0ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 73ms (Views: 12.6ms | ActiveRecord: 33.5ms | Allocations: 13226)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-22 13:19:45 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 2382)
+
+
+Started POST "/api/timesheets" for ::1 at 2021-04-22 13:19:57 +1000
+Processing by Api::TimesheetsController#create as */*
+  Parameters: {"date"=>"22/4/21", "staff_attendance"=>"", "client"=>"April Test ", "travel_information"=>"", "arrival_time"=>"", "departure_time"=>"", "products_used"=>"", "receipts"=>"", "notes"=>"", "action_next_visit"=>"", "written_by"=>"", "timesheet"=>{"date"=>"22/4/21", "staff_attendance"=>"", "client"=>"April Test ", "travel_information"=>"", "arrival_time"=>"", "departure_time"=>"", "products_used"=>"", "receipts"=>"", "notes"=>"", "action_next_visit"=>"", "written_by"=>""}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/timesheets_controller.rb:9:in `create'
+  [1m[36mTimesheets Create (71.6ms)[0m  [1m[32mINSERT INTO "timesheets" ("date", "client", "travel_information", "arrival_time", "departure_time", "products_used", "receipts", "notes", "action_next_visit", "written_by", "created_at", "updated_at", "staff_attendance") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["date", "22/4/21"], ["client", "April Test "], ["travel_information", ""], ["arrival_time", ""], ["departure_time", ""], ["products_used", ""], ["receipts", ""], ["notes", ""], ["action_next_visit", ""], ["written_by", ""], ["created_at", "2021-04-22 03:19:57.025640"], ["updated_at", "2021-04-22 03:19:57.025640"], ["staff_attendance", ""]]
+  ↳ app/controllers/api/timesheets_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (23.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/timesheets_controller.rb:9:in `create'
+Completed 200 OK in 100ms (Views: 0.2ms | ActiveRecord: 94.8ms | Allocations: 2097)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-22 13:19:57 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (6.7ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 6.7ms | Allocations: 2578)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-22 13:19:58 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.5ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.5ms | Allocations: 2595)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-22 14:12:20 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.5ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 16.4ms | Allocations: 4698)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-22 14:25:38 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (1.0ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 67ms (Views: 66.4ms | ActiveRecord: 19.6ms | Allocations: 4630)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-04-22 14:29:35 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (2.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:4:in `index'
+Completed 200 OK in 65ms (Views: 62.0ms | ActiveRecord: 2.3ms | Allocations: 2576)
+
+
+Started GET "/api/timesheets/5" for ::1 at 2021-04-22 14:29:36 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"id"=>"5", "timesheet"=>{}}
+  [1m[36mTimesheets Load (6.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:20:in `show'
+Completed 200 OK in 37ms (Views: 0.4ms | ActiveRecord: 6.7ms | Allocations: 2283)
+
+

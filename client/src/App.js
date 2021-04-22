@@ -15,7 +15,7 @@ export const App = () => {
           <Route exact path="/timesheet">
             <TimeContainer />
           </Route>
-          <Route exact path="/timesheet/edit/:id">
+          <Route exact path="/timesheet/edit/:id" >
             <TimeFormEdit />
           </Route>
           <Route exact path="/">

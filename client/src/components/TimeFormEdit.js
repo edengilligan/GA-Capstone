@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import {useParams} from "react-router-dom"
 const TimeFormEdit = (props) => {
   console.log(props);
-const params = useParams()
-console.log(params)
-  const [formState, setFormState] = useState({
+
+  const params = useParams(); 
+  console.log(params)
+
+  const [formState, setFormState] = useState ({
     date: "",
     staff_attendance: "",
     client: "",
@@ -18,10 +20,50 @@ console.log(params)
     written_by: ""
   });
 
-  // useEffect(() => {
-  //   setFormState(props.timesheet);
-  //   console.log("useEffect edit");
-  // }, [props.timesheet]);
+  // const [timesheetEdit, setTimesheetEdit] = useState({
+  //   date: "",
+  //   staff_attendance: "",
+  //   client: "",
+  //   travel_information: "",
+  //   arrival_time: "",
+  //   departure_time:"",
+  //   products_used:"",
+  //   receipts: "" , 
+  //   notes: "",
+  //   action_next_visit: "",
+  //   written_by: "",
+  // });
+
+  // const [timesheetDelete, setTimesheetDelete] = useState({
+  //   date: "",
+  //   staff_attendance: "",
+  //   client: "",
+  //   travel_information: "",
+  //   arrival_time: "",
+  //   departure_time:"",
+  //   products_used:"",
+  //   receipts: "" , 
+  //   notes: "",
+  //   action_next_visit: "",
+  //   written_by: "",
+  // });
+
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/api/timesheets/${params.id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((timesheetData) => {
+        console.log("timesheetData:", timesheetData);
+        setFormState(timesheetData);
+      });
+  },[]);
 
   const handleChange = (e) => {
     const newState = { ...formState };
@@ -33,6 +75,13 @@ console.log(params)
     console.log("handleSubmit");
     props.submit(formState);
   };
+
+
+  const handleTimesheetClick = (id) => {
+
+  
+  };
+
   const handleDelete = () => {
     // e.preventDefault();
     props.onDelete(formState.id);
