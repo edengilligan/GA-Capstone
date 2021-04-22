@@ -20,35 +20,6 @@ const TimeFormEdit = (props) => {
     written_by: ""
   });
 
-  // const [timesheetEdit, setTimesheetEdit] = useState({
-  //   date: "",
-  //   staff_attendance: "",
-  //   client: "",
-  //   travel_information: "",
-  //   arrival_time: "",
-  //   departure_time:"",
-  //   products_used:"",
-  //   receipts: "" , 
-  //   notes: "",
-  //   action_next_visit: "",
-  //   written_by: "",
-  // });
-
-  // const [timesheetDelete, setTimesheetDelete] = useState({
-  //   date: "",
-  //   staff_attendance: "",
-  //   client: "",
-  //   travel_information: "",
-  //   arrival_time: "",
-  //   departure_time:"",
-  //   products_used:"",
-  //   receipts: "" , 
-  //   notes: "",
-  //   action_next_visit: "",
-  //   written_by: "",
-  // });
-
-
   useEffect(() => {
     fetch(`http://localhost:3000/api/timesheets/${params.id}`, {
       method: "GET",
@@ -71,21 +42,33 @@ const TimeFormEdit = (props) => {
     setFormState(newState);
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log("handleSubmit");
-    props.submit(formState);
-  };
-
-
-  const handleTimesheetClick = (id) => {
-
-  
+    console.log(formState); 
+    // const foundTimesheet = timesheets.findIndex((timeEl) => {
+    //   console.log("timeEl:", timeEl);
+    //   return timeEl.id === timesheets.id;
+    // });
+    
+    // console.log("foundTimesheet:", foundTimesheet);
+    // const newTimesheets = [...timesheets];
+    // newTimesheets[foundTimesheet] = timesheets;
+    // setTimesheets(newTimesheets);
+    const url = `http://localhost:3000/api/timesheets/${params.id}`;
+    fetch(url, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formState),
+    }).then((response) => {
+      // this is where you would add TOAST with a pop up message
+      console.log("PATCH response:", response); // to refresh page add a .then here and then a fetch to fetch like avove and then set the state of timesheets
+    });
   };
 
   const handleDelete = () => {
-    // e.preventDefault();
-    props.onDelete(formState.id);
-    fetch(`http://localhost:3000/api/timesheets/${formState.id}`, {
+    fetch(`http://localhost:3000/api/timesheets/${params.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
