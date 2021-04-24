@@ -35,7 +35,6 @@ const TimeFormEdit = (props) => {
         setFormState(timesheetData);
       });
   },[]);
-
   const handleChange = (e) => {
     const newState = { ...formState };
     newState[e.target.name] = e.target.value;
@@ -49,7 +48,7 @@ const TimeFormEdit = (props) => {
     //   console.log("timeEl:", timeEl);
     //   return timeEl.id === timesheets.id;
     // });
-    
+
     // console.log("foundTimesheet:", foundTimesheet);
     // const newTimesheets = [...timesheets];
     // newTimesheets[foundTimesheet] = timesheets;
@@ -86,7 +85,6 @@ const TimeFormEdit = (props) => {
     <div>
     <h2>Edit/Delete</h2>
     <form onSubmit={handleSubmit}>
-      
       <div>
       <label>
       <div className="datetxt">Date</div> 
