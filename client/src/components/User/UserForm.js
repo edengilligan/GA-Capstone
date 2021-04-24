@@ -27,7 +27,7 @@ export const UserForm = () => {
     .then(data => {
        window.localStorage.setItem('token', data.token) 
        if (data.token) {
-        history.replace('/')
+        history.replace('/home')
       }
     })
   }
@@ -48,6 +48,7 @@ export const UserForm = () => {
           />
         </label>
         <button type="submit">Login</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );

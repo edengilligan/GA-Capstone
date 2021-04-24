@@ -1,7 +1,6 @@
 import TimeContainer from "./components/AddTimeForm";
 import TimeFormEdit from "./components/TimeFormEdit";
 import {UserForm} from "./components/User/UserForm"
-import {RegisterUser} from "./components/User/RegisterUser"
 import {List} from "./components/List"; 
 import AddTimeForm from "./components/AddTimeForm";
 // import Login from "./components/Login"; 
@@ -12,16 +11,12 @@ export const App = () => {
   return (
     <Router>
       <div>
-      <Link to="/login">Login</Link>
-      <Link to="/register">Register</Link>
+      <Link to="/home">Home</Link>
         <Link to="/add">Add</Link>
-        <Link to="/">Home</Link>
+        <Link to="/">Login</Link>
         <Switch>
-        {/* <Route exact path="/login">
+        <Route exact path="/login">
             <UserForm />
-          </Route> */}
-          <Route exact path="/register">
-            <RegisterUser />
           </Route>
           <Route exact path="/add">
             <AddTimeForm />
@@ -29,9 +24,13 @@ export const App = () => {
           <Route exact path="/timesheet/edit/:id" >
             <TimeFormEdit />
           </Route>
-          <Route exact path="/login">
+          <Route exact path="/">
             <UserForm />
-           {/* <List />  */}
+          </Route>
+
+          <Route exact path="/home">
+            <h1>Current Timesheets</h1>
+           <List /> 
           </Route>
         </Switch>
       </div>
