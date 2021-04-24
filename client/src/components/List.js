@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const List = () => {
   const [timesheets, setTimesheets] = useState([]);
@@ -8,25 +8,28 @@ export const List = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        "token": window.localStorage.getItem('token')
       },
     })
       .then((response) => {
-        return response.json();
+        console.log(response);
+        if (response.status === 200) {
+          return response.json();
+        } else {
+          return []; 
+        }
       })
       .then((timesheets) => {
         console.log("timesheets:", timesheets);
         setTimesheets(timesheets);
-      });
-  }, []);
+      }).catch((error) => console.log("CATCH error:", error));
+  }, [])
   return (
     <div>
-      
       <h1>Timesheets</h1>
       <ul>
         {timesheets.map((el, index) => (
-          <ul
-            key={index}
-          >
+          <ul key={index}>
             <Link to={`timesheet/edit/${el.id}`}>{el.client} </Link>
           </ul>
         ))}
@@ -34,5 +37,3 @@ export const List = () => {
     </div>
   );
 };
-
-

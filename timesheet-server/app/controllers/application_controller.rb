@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
-  
+    before_action :user_exists
+
     def encode_token user_id
       JWT.encode user_id, nil, 'none'
     end

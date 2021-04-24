@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+    before_action :user_exists, except: [:create]
     # index is just a get request /timesheets
     def index 
         render json: User.all

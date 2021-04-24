@@ -25,6 +25,7 @@ const TimeFormEdit = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        "token": window.localStorage.getItem('token')
       },
     })
       .then((response) => {
@@ -44,24 +45,20 @@ const TimeFormEdit = (props) => {
     // e.preventDefault();
     console.log("handleSubmit");
     console.log(formState); 
-    // const foundTimesheet = timesheets.findIndex((timeEl) => {
-    //   console.log("timeEl:", timeEl);
-    //   return timeEl.id === timesheets.id;
-    // });
 
-    // console.log("foundTimesheet:", foundTimesheet);
-    // const newTimesheets = [...timesheets];
-    // newTimesheets[foundTimesheet] = timesheets;
-    // setTimesheets(newTimesheets);
     const url = `http://localhost:3000/api/timesheets/${params.id}`;
     fetch(url, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
+        "token": window.localStorage.getItem('token')
       },
       body: JSON.stringify(formState),
     }).then((response) => {
       // this is where you would add TOAST with a pop up message
+      // set a state this will help to show the TOASTER popup 
+      // import components and show toaster based on state new compnenet will render 
+      // after ok histrou.replace 
       console.log("PATCH response:", response); // to refresh page add a .then here and then a fetch to fetch like avove and then set the state of timesheets
     });
   };
@@ -71,6 +68,7 @@ const TimeFormEdit = (props) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
+        "token": window.localStorage.getItem('token')
       },
     })
       .then((response) => {

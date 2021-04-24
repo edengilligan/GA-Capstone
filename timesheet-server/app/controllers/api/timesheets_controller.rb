@@ -1,6 +1,6 @@
 class Api::TimesheetsController < ApplicationController
     # index is just a get request /timesheets
-    before_action :user_exists
+
     def index
         render json: Timesheets.all
     end
