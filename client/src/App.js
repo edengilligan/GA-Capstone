@@ -3,11 +3,13 @@ import TimeFormEdit from "./components/TimeFormEdit";
 import {UserForm} from "./components/User/UserForm"
 import {List} from "./components/List"; 
 import AddTimeForm from "./components/AddTimeForm";
-// import Login from "./components/Login"; 
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import "./Style.css";
 
+
+
 export const App = () => {
+
   return (
     <Router>
       <div>
@@ -27,7 +29,6 @@ export const App = () => {
           <Route exact path="/">
             <UserForm />
           </Route>
-
           <Route exact path="/home">
             <h1>Current Timesheets</h1>
            <List /> 

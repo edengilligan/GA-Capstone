@@ -30,7 +30,7 @@ export const List = () => {
       <ul>
         {timesheets.map((el, index) => (
           <ul key={index}>
-            <Link to={`timesheet/edit/${el.id}`}>{el.client} </Link>
+            <Link to={`timesheet/edit/${el.id}`}><button>{el.client}<div></div>{el.date}</button></Link>
           </ul>
         ))}
       </ul>

@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";  
 import {useParams} from "react-router-dom"
+import { useHistory } from "react-router-dom";
+
+toast.configure()
+
 const TimeFormEdit = (props) => {
   console.log(props);
 
@@ -42,7 +48,7 @@ const TimeFormEdit = (props) => {
     setFormState(newState);
   };
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     console.log("handleSubmit");
     console.log(formState); 
 
@@ -55,12 +61,17 @@ const TimeFormEdit = (props) => {
       },
       body: JSON.stringify(formState),
     }).then((response) => {
+      
+      // const history = useHistory()
+      // const [toaster, setToaster] = useState({
+      
       // this is where you would add TOAST with a pop up message
       // set a state this will help to show the TOASTER popup 
       // import components and show toaster based on state new compnenet will render 
-      // after ok histrou.replace 
+      // after ok history.replace 
       console.log("PATCH response:", response); // to refresh page add a .then here and then a fetch to fetch like avove and then set the state of timesheets
     });
+    
   };
 
   const handleDelete = () => {
@@ -78,11 +89,23 @@ const TimeFormEdit = (props) => {
         console.log("timesheetData:", timesheetData);
      
       });
+
   };
+
+  const notifyEdit = () => {
+    toast('Timesheet Edited')
+    console.log('toaster test')
+  }
+
+  const notifyDelete = () => {
+    toast('Timesheet Deleted')
+    console.log('toaster test')
+  }
+
   return (
     <div>
     <h2>Edit/Delete</h2>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} >
       <div>
       <label>
       <div className="datetxt">Date</div> 
@@ -193,8 +216,8 @@ const TimeFormEdit = (props) => {
         ></input>
       </label>
       </div>
-        <button className ="edit" type="submit" >Edit</button>
-        <button className ="delete"onClick={handleDelete}>Delete</button>
+        <button className ="edit" type="submit" onClick={notifyEdit} >Edit</button>
+        <button className ="delete"onClick={handleDelete, notifyDelete} >Delete</button>
       </form>
     </div>
   );
