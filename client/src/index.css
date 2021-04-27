@@ -1,109 +1,25 @@
 
 body {
+  align-content: center;
   text-align: center;
   color: black;
-  overflow-x: hidden;
-  height: 100%;
   background-color: #16463D;
   font-family: 'Alegreya', serif;
- /* background-image: linear-gradient(to right,#16463D, #E8EFD5); */
   background-repeat: repeat; 
- margin-left: auto;
-  margin-right: auto;
-    width: 8em
+
+    
 } 
 
-/* input,
-textarea {
-  text-align: center;
-  background-color: #F3E5F5;
-  border-radius: 50px !important;
-  padding: 12px 15px 12px 15px !important;
-  width: 100%;
-  /* box-sizing: border-box; */
-  /* border: none !important;
-  border: 1px solid #F3E5F5 !important;
-  font-size: 16px !important;
-  color: black !important;
-  font-weight: 400;
-  margin-left: auto;
-    margin-right: auto; */ 
-    /* width: 8em */
-/* } */
-
-/* input:focus,
-textarea:focus {
-  text-align: center;
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  border: 1px solid #C8E6C9
-   !important;
-  outline-width: 0;
-  font-weight: 400;
-  margin-left: auto;
-    margin-right: auto;
-    width: 8em */
-/* } */
-
-button:focus {
-  text-align: center;
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  outline-width: 0
+.logo {
+padding-top: 30px;
+width: 250px;  
+height: 250px;
 }
 
-/* .card {
-  text-align: center;
-  border-radius: 0;
-  border: none
-} */
-
-/* .card1 {
-  text-align: center;
-  width: 50%;
-  padding: 40px 30px 10px 30px
-} */
-
-/* .card2 {
-  text-align: center;
-  width: 50%;
-  background-image: linear-gradient(to right, #FFEFD9, #E8EFD5)
-} */
-
-/* .heading {
-  text-align: center;
-  margin-bottom: 60px !important
-} */
-
-/* ::placeholder {
-  text-align: center;
-  color: #000 !important;
-  opacity: 1
-} */
-
-/* :-ms-input-placeholder {
-  text-align: center;
-  color: #000 !important
-} */
-
-/* ::-ms-input-placeholder {
-  text-align: center;
-  color: #000 !important
-} */
-
-/* .form-control-label {
-  text-align: center;
-  font-size: 12px;
-  margin-left: 15px
-} */
-
-/* .msg-info {
-  text-align: center;
-  padding-left: 15px;
-  margin-bottom: 30px
-} */
+.navBar {
+  color: white;
+  
+}
 
 .btn-color {
   text-align: center;
@@ -112,8 +28,6 @@ button:focus {
   background-image: linear-gradient(to right, #665150, #E8EFD5);
   padding: 15px;
   cursor: pointer;
-  border: none !important;
-  margin-top: 40px
 }
 
 .btn-color:hover {
@@ -123,77 +37,15 @@ button:focus {
 }
 
 .btn-white {
-  text-align: center;
-  border-radius: 50px;
+  
   color: #fff;
   background-image: linear-gradient(to right, #665150, #E8EFD5);
-  padding: 15px;
   cursor: pointer;
-  border: 2px solid #16463D !important
+
 }
 
 .btn-white:hover {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
   color: #fff;
   background-image: linear-gradient(to right, #FFEFD9, #E8EFD5)
 }
 
-/* a {
-  margin-left: auto;
-    margin-right: auto;
-    width: 8em; 
-  color: #000
-} */
-
-/* a:hover {
-  color: #000
-} */
-
-/* .bottom {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 100%;
-  margin-top: 50px !important
-} */
-
-/* .sm-text {
-  font-size: 15px
-} */
-
-/* @media screen and (max-width: 992px) {
-  text-align: center;
-  .card1 {
-      width: 100%;
-      padding: 40px 30px 10px 30px
-  } */
-
-  /* .card2 {
-    text-align: center;
-      width: 100%
-  } */
-
-  /* .right {
-      margin-top: 100px !important;
-      margin-bottom: 100px !important
-  }
-} */
-
-/* @media screen and (max-width: 768px) {
-  .container {
-  
-      padding: 10px !important
-  }
-
-  .card2 {
-  
-      padding: 50px
-  } */
-
-  /* .right {
-      margin-top: 50px !important;
-      margin-bottom: 50px !important
-  }
-} */

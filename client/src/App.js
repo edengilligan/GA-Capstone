@@ -6,10 +6,7 @@ import AddTimeForm from "./components/AddTimeForm";
 import { BrowserRouter as Router, Link, Switch, Route, useHistory } from "react-router-dom";
 import { useState } from "react";
 import "./Style.css";
-import {
-  Navbar, NavlinkDropdown,
-  NavlinkDropdownElement,Navlink, NavlinksList, Logo
-} from 'react-easy-navbar'
+
 
 
 
@@ -22,13 +19,11 @@ export const App = () => {
 // }
 
   return (
-
-    
-    <Router>
-      <div>
-      <Link to="/home">Home</Link>
-        <Link to="/add">Add</Link>
-        <Link to="/">Login</Link>
+<Router>
+    <div>
+      <Link className="navBar" to="/home">Home</Link>
+        <Link className="navBar" to="/add">Add</Link>
+        <Link className="navBar" to="/">Login</Link>
         {/* <Link onClick={onLogOut}>Logout</Link> */}
         <Switch>
         <Route exact path="/login">
@@ -49,7 +44,7 @@ export const App = () => {
            <List /> 
           </Route>
         </Switch>
-      </div>
+    </div>
     </Router>
   );
 };
