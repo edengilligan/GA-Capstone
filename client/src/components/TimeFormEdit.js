@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";  
-import {useParams} from "react-router-dom"
-import { useHistory } from "react-router-dom";
+import {useParams, useHistory} from "react-router-dom"
 
 toast.configure()
 
@@ -10,6 +9,7 @@ const TimeFormEdit = (props) => {
   console.log(props);
 
   const params = useParams(); 
+  const history = useHistory()
   console.log(params)
 
   const [formState, setFormState] = useState ({
@@ -47,6 +47,11 @@ const TimeFormEdit = (props) => {
     newState[e.target.name] = e.target.value;
     setFormState(newState);
   };
+
+  const notify = (message) => {
+    toast(message)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("handleSubmit");
@@ -61,8 +66,8 @@ const TimeFormEdit = (props) => {
       },
       body: JSON.stringify(formState),
     }).then((response) => {
-      
-      // const history = useHistory()
+      notify('timesheet edited')
+      history.replace('/home')
       // const [toaster, setToaster] = useState({
       
       // this is where you would add TOAST with a pop up message
@@ -92,10 +97,6 @@ const TimeFormEdit = (props) => {
 
   };
 
-  const notifyEdit = () => {
-    toast('Timesheet Edited')
-    console.log('toaster test')
-  }
 
   const notifyDelete = () => {
     toast('Timesheet Deleted')
@@ -216,8 +217,8 @@ const TimeFormEdit = (props) => {
         ></input>
       </label>
       </div>
-        <button className ="edit" type="submit" onClick={notifyEdit} >Edit</button>
-        <button className ="delete"onClick={handleDelete, notifyDelete} >Delete</button>
+        <button className ="edit" type="submit" >Edit</button>
+        <button className ="delete"onClick={handleDelete} >Delete</button>
       </form>
     </div>
   );
