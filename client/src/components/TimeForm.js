@@ -28,13 +28,12 @@ written_by: ""
     // e.preventDefault();
     console.log("handleSubmit");
     props.submit(formState);
-  };
+  }
 
   return (
     <div>
     <h2>Add Timesheet</h2>
     <form onSubmit={handleSubmit}>
-      
       <div>
       <label>
       <div className="datetxt">Date</div> 
@@ -56,10 +55,7 @@ written_by: ""
         ></input>
       </label>
       </div>
-
-
-
-      <div>
+<div>
       <label>
       <div className="stafftxt">Staff Attendance</div> 
         <input

@@ -66,6 +66,7 @@ const TimeFormEdit = (props) => {
       },
       body: JSON.stringify(formState),
     }).then((response) => {
+      console.log(response); 
       notify('timesheet edited')
       history.replace('/home')
       // const [toaster, setToaster] = useState({
@@ -90,18 +91,11 @@ const TimeFormEdit = (props) => {
       .then((response) => {
         return response.json();
       })
-      .then((timesheetData) => {
-        console.log("timesheetData:", timesheetData);
-     
-      });
-
+      .then((response) => {
+        notify('timesheet deleted')
+        history.replace('/home')
+      })
   };
-
-
-  const notifyDelete = () => {
-    toast('Timesheet Deleted')
-    console.log('toaster test')
-  }
 
   return (
     <div>
@@ -218,7 +212,7 @@ const TimeFormEdit = (props) => {
       </label>
       </div>
         <button className ="edit" type="submit" >Edit</button>
-        <button className ="delete"onClick={handleDelete} >Delete</button>
+        <button className ="delete"onClick={handleDelete} type="submit" >Delete</button>
       </form>
     </div>
   );

@@ -34,7 +34,7 @@ export const UserForm = () => {
     <form onSubmit={submitHandler}>
       <div class="container px-4 py-5 mx-auto">
                     <img class="logo" src="https://media.giphy.com/media/UWk4MNsTLWKoBkV0tt/source.gif"></img>
-                        <h3 class="mb-5 text-center heading">Staff Portal</h3>
+                        <h3 class="mb-5 text-center heading"></h3>
                         <div class="form-group"> <label class="form-control-label text-muted">Username</label> <input name="name" type="text" id="email" value={form.name} placeholder="Username" class="form-control" onChange={changeHandler} ></input></div>
                         <div class="form-group"> <label class="form-control-label text-muted">Password</label> <input name="password" type="password" id="psw" value={form.password} placeholder="Password" class="form-control" onChange={changeHandler} ></input></div>
                         <div class="row justify-content-center my-3 px-3"> <button type="submit" class="btn-block btn-color">Login</button> </div>  

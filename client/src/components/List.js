@@ -26,11 +26,11 @@ export const List = () => {
   }, [])
   return (
     <div>
-      <h1>Timesheets</h1>
+      <h1></h1>
       <ul>
         {timesheets.map((el, index) => (
           <ul key={index}>
-            <Link to={`timesheet/edit/${el.id}`}><button>{el.client}<div></div>{el.date}</button></Link>
+            <Link to={`timesheet/edit/${el.id}`}><button className="timesheetList">{el.client}<div></div>{el.date}</button></Link>
           </ul>
         ))}
       </ul>

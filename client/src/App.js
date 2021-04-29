@@ -24,12 +24,16 @@ export const App = () => {
       <Link className="navBar" to="/home">Home</Link>
         <Link className="navBar" to="/add">Add</Link>
         <Link className="navBar" to="/">Login</Link>
+        <Link className="navBar" to="/logout">Logout</Link>
         {/* <Link onClick={onLogOut}>Logout</Link> */}
         <Switch>
         <Route exact path="/login">
             <UserForm />
           </Route>
           {/* {loggedIn && <Route */}
+          <Route exact path="/logout">
+            <UserForm />
+          </Route>
           <Route exact path="/add">
             <AddTimeForm />
           </Route>
@@ -40,7 +44,7 @@ export const App = () => {
             <UserForm />
           </Route>
           <Route exact path="/home">
-            <h1>Current Timesheets</h1>
+            <h1></h1>
            <List /> 
           </Route>
         </Switch>
