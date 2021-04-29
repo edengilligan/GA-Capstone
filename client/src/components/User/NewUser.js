@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-export const UserForm = (props) => {
+export const NewUser = (props) => {
     const history = useHistory()
   const [form, setForm] = useState({
     name: "",
@@ -29,21 +29,18 @@ export const UserForm = (props) => {
       console.log("props check:", props)
       props.setLoginHook(true);
        if (data.token) {
-        history.replace('/home')
+        history.replace('/')
       }})}
   return (
     <div>
     <form onSubmit={submitHandler}>
       <div className="container px-4 py-5 mx-auto">
                     <img className="logo" src="https://media.giphy.com/media/UWk4MNsTLWKoBkV0tt/source.gif"></img>
-                        <h3 className="mb-5 text-center heading"></h3>
+                        <h3 className="mb-5 text-center heading">Sign Up</h3>
                         <div className="form-group"> <label class="form-control-label text-muted">Username</label> <input name="name" type="text" id="email" value={form.name} placeholder="Username" class="form-control" onChange={changeHandler} ></input></div>
                         <div className="form-group"> <label class="form-control-label text-muted">Password</label> <input name="password" type="password" id="psw" value={form.password} placeholder="Password" class="form-control" onChange={changeHandler} ></input></div>
                         <div className="row justify-content-center my-3 px-3"> <button type="submit" class="btn-block btn-color">Login</button> </div>  
                     </div>
-                <div className="bottom text-center mb-5">
-                   <div> <p href="#" className="sign-up-button">Don't have an account? </p></div><p><button type="submit" class="btn btn-white ml-2">Sign Up</button></p>
-                </div>
                 </form>
              </div>
   )

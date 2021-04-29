@@ -97,7 +97,8 @@ const TimeFormEdit = (props) => {
       })
   };
 
-  return (
+
+   return (
     <div>
     <h2>Edit/Delete</h2>
     <form onSubmit={handleSubmit} >
@@ -212,8 +213,9 @@ const TimeFormEdit = (props) => {
       </label>
       </div>
         <button className ="edit" type="submit" >Edit</button>
-        <button className ="delete"onClick={handleDelete} type="submit" >Delete</button>
+        {/* <button className ="delete"onClick={handleDelete} type="submit" >Delete</button> */}
       </form>
+      <button className ="delete"onClick={handleDelete} type="submit" >Delete</button>
     </div>
   );
 };

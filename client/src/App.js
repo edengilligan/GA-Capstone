@@ -3,6 +3,7 @@ import TimeFormEdit from "./components/TimeFormEdit";
 import {UserForm} from "./components/User/UserForm"
 import {List} from "./components/List"; 
 import AddTimeForm from "./components/AddTimeForm";
+import {NewUser} from "./components/User/NewUser"
 import { BrowserRouter as Router, Link, Switch, Route, useHistory } from "react-router-dom";
 import { useState } from "react";
 import "./Style.css";
@@ -11,28 +12,30 @@ import "./Style.css";
 
 
 export const App = () => {
-//   const history = useHistory()
-// const [loggedIn, setLoggedIn] = useState(false)  
-//   const onLogOut = () => {
-//   localStorage.removeItem('token')
-//   history.replace('/')
-// }
+const [loggedIn, setLoggedIn] = useState(false)  
+  const onLogOut = () => {
+    
+    setLoggedIn(false);
+  localStorage.removeItem('token')
+}
 
   return (
 <Router>
     <div>
-      <Link className="navBar" to="/home">Home</Link>
-        <Link className="navBar" to="/add">Add</Link>
-        <Link className="navBar" to="/">Login</Link>
-        <Link className="navBar" to="/logout">Logout</Link>
-        {/* <Link onClick={onLogOut}>Logout</Link> */}
+        {loggedIn && <Link className="navBar" to="/home">Home</Link>}
+        {loggedIn && <Link className="navBar" to="/add">Add</Link>}
+        {!loggedIn && <Link className="navBar" to="/">Login</Link>}
+        {loggedIn && <Link className="navBar"  onClick={onLogOut} to="/logout">Logout</Link>}
         <Switch>
         <Route exact path="/login">
-            <UserForm />
+            <UserForm setLoginHook={setLoggedIn}/>
           </Route>
-          {/* {loggedIn && <Route */}
+          <Route exact path="/signup">
+            <NewUser />
+          </Route>
+
           <Route exact path="/logout">
-            <UserForm />
+            <UserForm setLoginHook={setLoggedIn}/>
           </Route>
           <Route exact path="/add">
             <AddTimeForm />
@@ -41,7 +44,7 @@ export const App = () => {
             <TimeFormEdit />
           </Route>
           <Route exact path="/">
-            <UserForm />
+            <UserForm setLoginHook={setLoggedIn} />
           </Route>
           <Route exact path="/home">
             <h1></h1>
