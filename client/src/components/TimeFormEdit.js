@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";  
 import {useParams, useHistory} from "react-router-dom"
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import { createMuiTheme } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 toast.configure()
 
@@ -100,122 +105,25 @@ const TimeFormEdit = (props) => {
 
    return (
     <div>
+      <img className="logo" src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"></img>
     <h2>Edit/Delete</h2>
     <form onSubmit={handleSubmit} >
-      <div>
-      <label>
-      <div className="datetxt">Date</div> 
-        <input
-          name="date"
-          value={formState.date}
-          onChange={handleChange}
-        ></input>
-      </label>
-      </div>
-      <div>
-      <label>
-      <div className="clienttxt">Client</div> 
-        <input
-          name="client"
-          value={formState.client}
-          onChange={handleChange}
-        ></input>
-      </label>
-      </div>
-      <div>
-      <label>
-      <div className="stafftxt">Staff Attendance</div> 
-        <input
-          name="staff_attendance"
-          value={formState.staff_attendance}
-          onChange={handleChange}
-        ></input>
-      </label>
-      </div>
-     <div>
-      <label>
-      <div className="traveltxt">Travel Information</div> 
-        <input
-          name="travel_information"
-          value={formState.travel_information}
-          onChange={handleChange}
-        ></input>
-      </label>
-      </div>
-<div>
-      <label>
-      <div className="arrivaltxt">Arrival Time</div> 
-        <input
-          name="arrival_time"
-          value={formState.arrival_time}
-          onChange={handleChange}
-        ></input>
-      </label>
-      </div>
-        <div>
-      <label>
-      <div className="departuretxt">Departure Time</div> 
-        <input
-          name="departure_time"
-          value={formState.departure_time}
-          onChange={handleChange}
-        ></input>
-      </label>
-      </div>
-<div>
-      <label>
-      <div className="productstxt">Products Used</div> 
-        <input
-          name="products_used"
-          value={formState.products_used}
-          onChange={handleChange}
-        ></input>
-      </label>
-      </div>
-<div>
-      <label>
-      <div className="receiptstxt">Receipts</div> 
-        <input
-          name="receipts"
-          value={formState.receipts}
-          onChange={handleChange}
-        ></input>
-      </label>
-      </div>
-<div>
-      <label>
-      <div className="notestxt">Notes</div> 
-        <input
-          name="notes"
-          value={formState.notes}
-          onChange={handleChange}
-        ></input>
-      </label>
-      </div>
-<div>
-      <label>
-      <div className="actiontxt">Action Next Visit</div> 
-        <input
-          name="action_next_visit"
-          value={formState.action_next_visit}
-          onChange={handleChange}
-        ></input>
-      </label>
-      </div>
-<div>
-      <label>
-      <div className="writtentxt">Written By</div> 
-        <input
-          name="written_by"
-          value={formState.written_by}
-          onChange={handleChange}
-        ></input>
-      </label>
-      </div>
-        <button className ="edit" type="submit" >Edit</button>
+
+    <div> <TextField className="addtimeform" name="date" id="standard-basic" label="Date" value={formState.date} onChange={handleChange}/></div>
+    <div> <TextField className="addtimeform" name="client" id="standard-basic" label="Client" value={formState.client}onChange={handleChange}/></div> 
+      <div> <TextField className="addtimeform" name="staff_attendance" id="standard-basic" label="Staff Attendance" value={formState.staff_attendance} onChange={handleChange}/></div>    
+      <div> <TextField className="addtimeform" name="arrival_time" id="standard-basic" label="Arrival Time" value={formState.arrival_time} onChange={handleChange}/></div>
+      <div> <TextField className="addtimeform" name="departure_time" id="standard-basic" label="Departure Time" value={formState.departure_time} onChange={handleChange}/></div>
+      <div> <TextField className="addtimeform" name="products_used" id="standard-basic" label="Products Used" value={formState.products_used} onChange={handleChange}/></div>
+      <div> <TextField className="addtimeform" name="receipts" id="standard-basic" label="Receipts" value={formState.receipts} onChange={handleChange}/></div>
+      <div> <TextField className="addtimeform" name="notes" id="standard-basic" label="Notes" value={formState.notes} onChange={handleChange}/></div>
+      <div> <TextField className="addtimeform" name="action_next_visit" id="standard-basic" label="Action Next Visit" value={formState.action_next_visit} onChange={handleChange}/></div>
+      <div> <Grid className="addtimeform" container spacing={1} alignItems="center"justify="center"><Grid item><AccountCircle /></Grid>
+      <Grid item><TextField name="written_by"alignItems="center"justify="center" id="input-with-icon-grid" label="Written By" value={formState.written_by} onChange={handleChange}/></Grid></Grid></div>  
+        <Button type="submit" size="small" variant="outlined"> Edit 🖊️ </Button>
         {/* <button className ="delete"onClick={handleDelete} type="submit" >Delete</button> */}
       </form>
-      <button className ="delete"onClick={handleDelete} type="submit" >Delete</button>
+      <Button type="submit" onClick={handleDelete} size="small" variant="outlined"> Delete 🗑️ </Button>
     </div>
   );
 };

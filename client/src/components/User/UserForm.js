@@ -1,5 +1,21 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBInput } from 'mdbreact';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  root: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+  },
+});
 
 export const UserForm = (props) => {
     const history = useHistory()
@@ -32,18 +48,17 @@ export const UserForm = (props) => {
         history.replace('/home')
       }})}
   return (
+
+    
     <div>
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} noValidate autoComplete="off" >
       <div className="container px-4 py-5 mx-auto">
-                    <img className="logo" src="https://media.giphy.com/media/UWk4MNsTLWKoBkV0tt/source.gif"></img>
-                        <h3 className="mb-5 text-center heading"></h3>
-                        <div className="form-group"> <label class="form-control-label text-muted">Username</label> <input name="name" type="text" id="email" value={form.name} placeholder="Username" class="form-control" onChange={changeHandler} ></input></div>
-                        <div className="form-group"> <label class="form-control-label text-muted">Password</label> <input name="password" type="password" id="psw" value={form.password} placeholder="Password" class="form-control" onChange={changeHandler} ></input></div>
-                        <div className="row justify-content-center my-3 px-3"> <button type="submit" class="btn-block btn-color">Login</button> </div>  
+                    <img className="logo" src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"></img>
+                        <div> <TextField name="name" id="standard-basic" label="Username" value={form.name} onChange={changeHandler}/></div>
+                        <div> <TextField name="password" id="standard-basic" label="Password" value={form.password} onChange={changeHandler} type="password"/></div>
+                        <div> <Button type="submit" size="large" variant="outlined"> LOGIN 🔛</Button></div>  
                     </div>
-                <div className="bottom text-center mb-5">
-                   <div> <p href="#" className="sign-up-button">Don't have an account? </p></div><p><button type="submit" class="btn btn-white ml-2">Sign Up</button></p>
-                </div>
+                 <div> <Button type="submit" size="large" variant="outlined">Sign up 📝</Button></div>
                 </form>
              </div>
   )

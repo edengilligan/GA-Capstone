@@ -1,68 +1,46 @@
 
-.form-group  {
-  width: 30%; 
-  margin-top: 2%;
-  margin-left: 35%;
-}
 
 body {
   align-content: center;
   text-align: center;
-  color: black; 
-  background-color: #16463D;
+  color: #B42626; 
+  background-color: #FFEEEE;
   font-family: 'Alegreya', serif;
-  background-repeat: repeat; 
-
-    
+  background-repeat: repeat;   
 } 
+
+#standard-basic {
+text-decoration-color: thistle;
+
+ 
+}
+
+.addtimeform {
+  color: #B42626; 
+}
+
 
 .logo {
 padding-top: 30px;
-width: 220px;  
-height: 220px;
+width: 300px;  
+height: 300px;
 }
 
+
 .navBar {
-  color: white;
+  color: #FFEEEE; 
+  background-color:#B42626; 
+border-left: 100%;
+
   
 }
 
-.btn-color {
-  text-align: center;
-  align-content: center;
-  border-radius: 50px;
-  color: #fff;
-  width: 30%; 
-  margin-top: 2%;
-  margin-left: 35%;
-  margin-bottom: 2%;
-  background-image: linear-gradient(to right, #665150, #E8EFD5);
-  padding: 10px;
-  cursor: pointer;
-}
-
-.btn-color:hover, .btn-white:hover, .timesheetList:hover {
-  text-align: center;
-  color: #fff;
-  background-image: linear-gradient(to right, #FFEFD9, #E8EFD5)
-}
-
-.btn-white {
-  color: #fff;
-  border-radius: 50px;
-  background-image: linear-gradient(to right, #665150, #E8EFD5);
-  cursor: pointer;
-
-}
-
 .timesheetList {
-  text-align: center;
-  border-radius: 40px;
-  color: white;
-  background-color:#16463D ;
- padding: 5px; 
-  width: 10%; 
-  height: 10%; 
-  cursor: pointer;
+margin-left: 45%;
+width: 80px; 
+height: 80px; 
+/* background-color: #B42626;  */
+color: #B42626;
+
 }
 

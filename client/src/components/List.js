@@ -26,14 +26,18 @@ export const List = () => {
   }, [])
   return (
     <div>
-      <h1></h1>
+     
+      <img className="logo" src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"></img>
       <ul>
         {timesheets.map((el, index) => (
           <ul key={index}>
-            <Link to={`timesheet/edit/${el.id}`}><button className="timesheetList">{el.client}<div></div>{el.date}</button></Link>
+            <Link to={`timesheet/edit/${el.id}`}><li className="timesheetList">{el.client}<div></div>{el.date}</li></Link>
+            
           </ul>
         ))}
+        
       </ul>
     </div>
   );
 };
+
