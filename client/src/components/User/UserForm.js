@@ -41,13 +41,17 @@ export const UserForm = (props) => {
     <form onSubmit={submitHandler} noValidate autoComplete="off" >
       <div className="container px-4 py-5 mx-auto">
                     <img className="logo" src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"></img>
-                        <div> <TextField name="name" id="standard-basic" label="Username" value={form.name} onChange={changeHandler}/></div>
-                        <div> <TextField name="password" id="standard-basic" label="Password" value={form.password} onChange={changeHandler} type="password"/></div>
-                        <div> <Button type="submit" size="large" variant="outlined"> LOGIN 🔛</Button></div>  
+                        <div> <TextField inputProps={{style: {fontSize: 20}}}
+  InputLabelProps={{style: {fontSize: 20}}} name="name" className="loginamebox" id="standard-basic" label="Username" value={form.name} onChange={changeHandler}/></div>
+                        <div> <TextField inputProps={{style: {fontSize: 20}}} // font size of input text
+  InputLabelProps={{style: {fontSize: 20}}} name="password" className="loginamebox" id="standard-basic" label="Password" value={form.password} onChange={changeHandler} type="password"/></div>
+                         <button type="submit" className='signupbutton' > Login</button> 
+                         <button type="submit" className='signupbutton' onClick={() => history.push('/signup')}>Sign up</button>
                     </div>
-                 <div> <Button type="submit" size="large" variant="outlined" onClick={() => history.push('/signup')}>Sign up 📝</Button></div>
+                  
                 </form>
              </div>
+             
   )
 }
 
