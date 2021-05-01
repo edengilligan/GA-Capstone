@@ -16,6 +16,9 @@ import {
 } from '@material-ui/pickers';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { injectStyle } from "react-toastify/dist/inject-style";
+
+injectStyle();
 
 toast.configure()
 
@@ -113,7 +116,7 @@ useEffect(() =>{
       body: JSON.stringify(formState),
     }).then((response) => {
       console.log(response); 
-      notify('timesheet edited')
+      notify('Timesheet Sucessfully Updated')
       history.replace('/home')
       // const [toaster, setToaster] = useState({
       
@@ -138,7 +141,7 @@ useEffect(() =>{
         return response.json();
       })
       .then((response) => {
-        notify('timesheet deleted')
+        notify('Timesheet Sucessfully Updated')
         history.replace('/home')
       })
   };

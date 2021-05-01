@@ -24,6 +24,8 @@ const [loggedIn, setLoggedIn] = useState(false)
 }
 
   return (
+
+   
 <Router>
     <div>
         {loggedIn && <Link className="navBar" to="/home">Home</Link>}
