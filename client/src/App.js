@@ -12,6 +12,10 @@ import "./Style.css";
 
 
 export const App = () => {
+
+ const name = JSON.parse(localStorage.getItem('name'));
+ console.log(name)
+
 const [loggedIn, setLoggedIn] = useState(false)  
   const onLogOut = () => {
     
@@ -31,6 +35,7 @@ const [loggedIn, setLoggedIn] = useState(false)
             <UserForm setLoginHook={setLoggedIn}/>
           </Route>
           <Route exact path="/signup">
+          <h2>Welcome to the team!</h2>
             <NewUser />
           </Route>
 
@@ -38,16 +43,19 @@ const [loggedIn, setLoggedIn] = useState(false)
             <UserForm setLoginHook={setLoggedIn}/>
           </Route>
           <Route exact path="/add">
+          <h2>Welcome, {'name'}!</h2>
             <AddTimeForm />
           </Route>
           <Route exact path="/timesheet/edit/:id" >
+          <h2>Welcome, {name}!</h2>
             <TimeFormEdit />
           </Route>
           <Route exact path="/">
             <UserForm setLoginHook={setLoggedIn} />
           </Route>
           <Route exact path="/home">
-            <h1></h1>
+          <h2>Welcome, {name}!</h2>
+            
            <List /> 
           </Route>
         </Switch>

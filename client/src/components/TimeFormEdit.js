@@ -7,6 +7,12 @@ import Grid from '@material-ui/core/Grid';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { createMuiTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
 
 toast.configure()
 
@@ -16,7 +22,10 @@ const TimeFormEdit = (props) => {
   const params = useParams(); 
   const history = useHistory()
   console.log(params)
+const [selectedDate, setSelectedDate] = React.useState(new Date());
 
+  const handleDateChange = (date) => {
+    setSelectedDate(date); }
   const [formState, setFormState] = useState ({
     date: "",
     staff_attendance: "",
@@ -30,6 +39,15 @@ const TimeFormEdit = (props) => {
     action_next_visit: "",
     written_by: ""
   });
+
+
+useEffect(() =>{ 
+  // console.log("event: ", e.target);
+  const newState = { ...formState };
+  newState["date"] = selectedDate;
+  console.log('this is the new state in use effect', newState);
+  setFormState(newState);
+}, [selectedDate])
 
   useEffect(() => {
     fetch(`http://localhost:3000/api/timesheets/${params.id}`, {
@@ -108,8 +126,21 @@ const TimeFormEdit = (props) => {
       <img className="logo" src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"></img>
     <h2>Edit/Delete</h2>
     <form onSubmit={handleSubmit} >
-
-    <div> <TextField className="addtimeform" name="date" id="standard-basic" label="Date" value={formState.date} onChange={handleChange}/></div>
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <Grid container justify="space-around">
+        <KeyboardDatePicker
+          disableToolbar
+          variant="inline"
+          format="MM/dd/yyyy"
+          margin="normal"
+          id="date-picker-inline"
+          label="Date picker inline"
+          name="date"
+          value={formState.date} 
+          onChange={handleChange, handleDateChange}
+          KeyboardButtonProps={{'aria-label': 'change date',}}/> </Grid>
+          </MuiPickersUtilsProvider>
+    {/* <div> <TextField className="addtimeform" name="date" id="standard-basic" label="Date" value={formState.date} onChange={handleChange}/></div> */}
     <div> <TextField className="addtimeform" name="client" id="standard-basic" label="Client" value={formState.client}onChange={handleChange}/></div> 
       <div> <TextField className="addtimeform" name="staff_attendance" id="standard-basic" label="Staff Attendance" value={formState.staff_attendance} onChange={handleChange}/></div>    
       <div> <TextField className="addtimeform" name="arrival_time" id="standard-basic" label="Arrival Time" value={formState.arrival_time} onChange={handleChange}/></div>

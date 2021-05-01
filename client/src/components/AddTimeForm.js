@@ -1,38 +1,25 @@
 import React, { useEffect, useState } from "react";
 import {
-  BrowserRouter as Router,
-  Link,
-  Switch,
-  Route,
-  useHistory,
-} from "react-router-dom";
+  BrowserRouter as Router, Link, Switch, Route, useHistory} from "react-router-dom";
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import { createMuiTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
-      contrastText: '#red',
-    },
-    secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
-    },
-  },
-});
-
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
 
 
 const AddTimeForm = () => {
   const history = useHistory();
+
+  const [selectedDate, setSelectedDate] = React.useState(new Date());
+  // const [selectedArrivalTime, setSelectedArrivalTime] = React.useState("");
+
+    
   const [formState, setFormState] = useState({
     date: "",
     staff_attendance: "",
@@ -47,11 +34,36 @@ const AddTimeForm = () => {
     written_by: "",
   });
 
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    console.log("date", selectedDate) }
+
+  // const handleArrivalTimeChange = (time) => {
+  //   setSelectedArrivalTime(time);
+  //   console.log("time", selectedArrivalTime) }
+
   const handleChange = (e) => {
+    console.log("event: ", e.target);
     const newState = { ...formState };
     newState[e.target.name] = e.target.value;
     setFormState(newState);
   };
+
+useEffect(() =>{ 
+  // console.log("event: ", e.target);
+  const newState = { ...formState };
+  newState["date"] = selectedDate;
+  console.log('this is the new state in use effect', newState);
+  setFormState(newState);
+}, [selectedDate])
+
+// useEffect(() =>{ 
+//   // console.log("event: ", e.target);
+//   const newState = { ...formState };
+//   newState["arrival_time"] = selectedArrivalTime;
+//   console.log('this is the new state in use effect', newState);
+//   setFormState(newState);
+// }, [selectedArrivalTime])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,8 +85,22 @@ const AddTimeForm = () => {
       <img className="logo" src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"></img>
       <h2>Add Timesheet</h2>
       <form onSubmit={handleSubmit}>
-
-      <div> <TextField className="addtimeform" name="date" id="standard-basic" label="Date" value={formState.date} onChange={handleChange}/></div>
+      
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <Grid container justify="space-around">
+        <KeyboardDatePicker
+          disableToolbar
+          variant="inline"
+          format="MM/dd/yyyy"
+          margin="normal"
+          id="date-picker-inline"
+          label="Date"
+          name="date"
+          value={formState.date, selectedDate} 
+          onChange={handleChange, handleDateChange}
+          KeyboardButtonProps={{'aria-label': 'change date',}}/> </Grid>
+          </MuiPickersUtilsProvider>
+      {/* <div> <TextField className="addtimeform" name="date" id="standard-basic" label="Date" value={formState.date} onChange={handleChange}/></div> */}
       <div> <TextField className="addtimeform" name="client" id="standard-basic" label="Client" value={formState.client}onChange={handleChange}/></div> 
       <div> <TextField className="addtimeform" name="staff_attendance" id="standard-basic" label="Staff Attendance" value={formState.staff_attendance} onChange={handleChange}/></div>    
       <div> <TextField className="addtimeform" name="arrival_time" id="standard-basic" label="Arrival Time" value={formState.arrival_time} onChange={handleChange}/></div>
@@ -87,6 +113,7 @@ const AddTimeForm = () => {
       <div> <Button type="submit" size="small" variant="outlined"> Add </Button></div> 
       </form>
     </div>
+    
   );
 };
 
