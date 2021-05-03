@@ -71,10 +71,10 @@ const AddTimeForm = () => {
 
   useEffect(() => {
     // console.log("event: ", e.target);
-    const newState = { ...formState };
-    newState["arrival_time"] = selectedTime;
-    console.log("this is the new state in use effect", newState);
-    setFormState(newState);
+    const newTimeState = { ...formState };
+    newTimeState["arrival_time"] = selectedTime;
+    console.log("this is the new state in use effect", newTimeState);
+    setFormState(newTimeState);
   }, [selectedTime]);
 
   // useEffect(() =>{
@@ -101,7 +101,7 @@ const AddTimeForm = () => {
 
   return (
     <div>
-      {/* <Container maxWidth="sm"> */}
+    
       <img
         className="logo"
         src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"
@@ -123,34 +123,14 @@ const AddTimeForm = () => {
               value={(formState.date, selectedDate)}
               onChange={(handleChange, handleDateChange)}
               KeyboardButtonProps={{ "aria-label": "change date" }}
-            />{" "}
+            />
           </Grid>
 
-          <div>
-            {" "}
-            <TextField
-              inputProps={{ style: { fontSize: 20 } }}
-              InputLabelProps={{ style: { fontSize: 20 } }}
-              className="loginamebox"
-              name="client"
-              id="standard-basic"
-              label="Client"
-              value={formState.client}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            {" "}
-            <TextField
-              inputProps={{ style: { fontSize: 20 } }}
-              InputLabelProps={{ style: { fontSize: 20 } }}
-              className="loginamebox"
-              name="staff_attendance"
-              id="standard-basic"
-              label="Staff Attendance"
+          <div> <TextField inputProps={{ style: { fontSize: 20 } }}InputLabelProps={{ style: { fontSize: 20 } }}className="loginamebox" name="client" id="standard-basic" label="Client" value={formState.client} onChange={handleChange}/></div>
+         
+          <div><TextField inputProps={{ style: { fontSize: 20 } }} InputLabelProps={{ style: { fontSize: 20 } }}className="loginamebox" name="staff_attendance" id="standard-basic" label="Staff Attendance"
               value={formState.staff_attendance}
-              onChange={handleChange}
-            />
+              onChange={handleChange} />
           </div>
 
           <KeyboardTimePicker

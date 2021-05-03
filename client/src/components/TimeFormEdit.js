@@ -33,6 +33,11 @@ const [selectedTime, setSelectedTime] = React.useState(new Date());
 
   const handleDateChange = (date) => {
     setSelectedDate(date); }
+
+    const handleTimeChange = (time) => {
+      setSelectedTime(time);
+      console.log("time", selectedTime);
+    };
   const [formState, setFormState] = useState ({
     date: "",
     staff_attendance: "",
@@ -47,9 +52,7 @@ const [selectedTime, setSelectedTime] = React.useState(new Date());
     written_by: ""
   });
 
-  const handleTimeChange = (time) => {
-    setSelectedTime(time);
-    console.log("time", selectedTime) }
+
 
 useEffect(() =>{ 
   // console.log("event: ", e.target);
@@ -59,13 +62,13 @@ useEffect(() =>{
   setFormState(newState);
 }, [selectedDate])
 
-useEffect(() =>{ 
+useEffect(() => {
   // console.log("event: ", e.target);
-  const newState = { ...formState };
-  newState["arrival_time"] = selectedTime;
-  console.log('this is the new state in use effect', newState);
-  setFormState(newState);
-}, [selectedTime])
+  const newTimeState = { ...formState };
+  newTimeState["arrival_time"] = selectedTime;
+  console.log("this is the new state in use effect", newTimeState);
+  setFormState(newTimeState);
+}, [selectedTime]);
 
 // useEffect(() =>{ 
 //   // console.log("event: ", e.target);
@@ -175,20 +178,20 @@ useEffect(() =>{
   InputLabelProps={{style: {fontSize: 20}}} className="loginamebox" name="staff_attendance" id="standard-basic" label="Staff Attendance" value={formState.staff_attendance} onChange={handleChange}/></div>    
       
       <KeyboardTimePicker
-      inputProps={{style: {fontSize: 20}}}
-      InputLabelProps={{style: {fontSize: 20}}} 
-      className="loginamebox"
-          margin="normal"
-          name="arrival_time"
-          id="time-picker"
-          label="Arrival Time"
-          value={handleChange, selectedTime}
-          onChange={formState.arrival_time, handleTimeChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change time',
+       inputProps={{ style: { fontSize: 20 } }}
+       InputLabelProps={{ style: { fontSize: 20 } }}
+       margin="normal"
+       name="arrival_time"
+       id="time-picker"
+       label="Arrival Time"
+       className="loginamebox"
+       value={(handleChange, selectedTime)}
+       onChange={(formState.arrival_time, handleTimeChange)}
+       KeyboardButtonProps={{
+         "aria-label": "change time",
           }}
         />
-{/* <div>
+<div>
 
 <KeyboardTimePicker
           margin="normal"
@@ -201,7 +204,7 @@ useEffect(() =>{
             'aria-label': 'change time',
           }}
         />
-      </div> */}
+      </div>
       </MuiPickersUtilsProvider>
       
   
