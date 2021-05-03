@@ -144,7 +144,7 @@ const AddTimeForm = () => {
             id="time-picker"
             label="Arrival Time"
             className="loginamebox"
-            value={(formState.arrival_time, selectedTime)}
+            value={formState.arrival_time}
             onChange={(handleChange, handleTimeChange)}
             KeyboardButtonProps={{
               "aria-label": "change time",
@@ -159,7 +159,7 @@ const AddTimeForm = () => {
             id="time-picker"
             label="Departure Time"
             className="loginamebox"
-            value={(formState.departure_time, selectedTime2)}
+            value={formState.departure_time}
             onChange={(handleChange, handleTimeChange2)}
             KeyboardButtonProps={{
               "aria-label": "change time",

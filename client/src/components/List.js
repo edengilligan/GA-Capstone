@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import moment from "moment"; 
 
 export const List = () => {
   const [timesheets, setTimesheets] = useState([]);
@@ -34,7 +35,7 @@ export const List = () => {
       <ul>
         {timesheets.map((el, index) => (
           <ul key={index}>
-            <Link to={`timesheet/edit/${el.id}`}><li class="list-group-item list-group-item-action list-group-item-success">{el.client}<div></div>{el.date}</li></Link>
+            <Link to={`timesheet/edit/${el.id}`}><li class="list-group-item list-group-item-action list-group-item-success">{el.client}<div></div>{moment(el.date).format("MMM Do YY")}</li></Link>
             
           </ul>
         ))}
