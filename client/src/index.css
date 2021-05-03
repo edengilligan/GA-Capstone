@@ -15,6 +15,18 @@ text-decoration-color: thistle;
  
 }
 
+
+input {
+  /* default */
+  caret-color: #B42626;
+}
+
+input {
+  /* custom */
+  caret-color: #B42626;
+}
+
+
 .addtimeform {
   color: #B42626; 
 }
@@ -23,11 +35,9 @@ text-decoration-color: thistle;
   
 }
 
-
-
 .navBar {
-  color: #FFEEEE; 
-  background-color:#B42626; 
+  color: #B42626; 
+  font-size: 150%;
 border-left: 100%;
 
   
@@ -35,6 +45,9 @@ border-left: 100%;
 
 .timesheetList {
 margin-left: 45%;
+border-radius: 50%;
+margin-right: 10%;
+padding: 10%;
 width: 80px; 
 height: 80px; 
 /* background-color: #B42626;  */
