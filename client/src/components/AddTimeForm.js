@@ -18,14 +18,14 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 import Container from "@material-ui/core/Container";
+import { toast } from "react-toastify";
+
+
+toast.configure();
 
 const AddTimeForm = () => {
   const history = useHistory();
 
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
-  const [selectedTime, setSelectedTime] = React.useState(new Date());
-  const [selectedTime2, setSelectedTime2] = React.useState(new Date());
-  // const [selectedArrivalTime, setSelectedArrivalTime] = React.useState("");
 
   const [formState, setFormState] = useState({
     date: "",
@@ -42,19 +42,23 @@ const AddTimeForm = () => {
   });
 
   const handleDateChange = (date) => {
-    setSelectedDate(date);
-    console.log("date", selectedDate);
+    const newState = { ...formState };
+    newState.date = date;
+    setFormState(newState);
   };
 
-  const handleTimeChange = (time) => {
-    setSelectedTime(time);
-    console.log("time", selectedTime);
+  const arrivalTime = (date) => {
+    const newState = { ...formState };
+    newState.arrival_time = date;
+    setFormState(newState);
+
   };
 
-
-  const handleTimeChange2 = (time2) => {
-    setSelectedTime2(time2);
-    console.log("time", selectedTime2);
+  const departureTime = (date) => {
+    const newState = { ...formState };
+    newState.departure_time = date;
+    setFormState(newState);
+   
   };
 
   const handleChange = (e) => {
@@ -63,30 +67,10 @@ const AddTimeForm = () => {
     newState[e.target.name] = e.target.value;
     setFormState(newState);
   };
-
-  useEffect(() => {
-    // console.log("event: ", e.target);
-    const newState = { ...formState };
-    newState["date"] = selectedDate;
-    console.log("this is the new state in use effect", newState);
-    setFormState(newState);
-  }, [selectedDate]);
-
-  useEffect(() => {
-    // console.log("event: ", e.target);
-    const newTimeState = { ...formState };
-    newTimeState["arrival_time"] = selectedTime;
-    console.log("this is the new state in use effect", newTimeState);
-    setFormState(newTimeState);
-  }, [selectedTime]);
-
-  useEffect(() =>{
-    // console.log("event: ", e.target);
-    const newTimeState2 = { ...formState };
-    newTimeState2["departure_time"] = selectedTime2;
-    console.log('this is the new state in use effect', newTimeState2);
-    setFormState(newTimeState2);
-  }, [selectedTime2])
+  
+  const notify = (message) => {
+    toast(message);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -98,6 +82,8 @@ const AddTimeForm = () => {
       },
       body: JSON.stringify(formState),
     }).then((response) => {
+      notify("Timesheet Sucessfully Added");
+      history.replace("/home");
       console.log("use clases: response:", response);
     });
   };
@@ -123,8 +109,8 @@ const AddTimeForm = () => {
               id="date-picker-inline"
               label="Date"
               name="date"
-              value={(formState.date, selectedDate)}
-              onChange={(handleChange, handleDateChange)}
+              value={formState.date}
+              onChange={handleDateChange}
               KeyboardButtonProps={{ "aria-label": "change date" }}
             />
           </Grid>
@@ -145,7 +131,7 @@ const AddTimeForm = () => {
             label="Arrival Time"
             className="loginamebox"
             value={formState.arrival_time}
-            onChange={(handleChange, handleTimeChange)}
+            onChange={arrivalTime}
             KeyboardButtonProps={{
               "aria-label": "change time",
             }}
@@ -160,7 +146,7 @@ const AddTimeForm = () => {
             label="Departure Time"
             className="loginamebox"
             value={formState.departure_time}
-            onChange={(handleChange, handleTimeChange2)}
+            onChange={departureTime}
             KeyboardButtonProps={{
               "aria-label": "change time",
             }}
