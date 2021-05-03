@@ -30,6 +30,7 @@ const TimeFormEdit = (props) => {
   console.log(params)
 const [selectedDate, setSelectedDate] = React.useState(new Date());
 const [selectedTime, setSelectedTime] = React.useState(new Date());
+const [selectedTime2, setSelectedTime2] = React.useState(new Date());
 
   const handleDateChange = (date) => {
     setSelectedDate(date); }
@@ -38,6 +39,12 @@ const [selectedTime, setSelectedTime] = React.useState(new Date());
       setSelectedTime(time);
       console.log("time", selectedTime);
     };
+
+    const handleTimeChange2 = (time2) => {
+      setSelectedTime2(time2);
+      console.log("time", selectedTime2);
+    };
+
   const [formState, setFormState] = useState ({
     date: "",
     staff_attendance: "",
@@ -70,13 +77,13 @@ useEffect(() => {
   setFormState(newTimeState);
 }, [selectedTime]);
 
-// useEffect(() =>{ 
-//   // console.log("event: ", e.target);
-//   const newState = { ...formState };
-//   newState["departure_time"] = selectedTime;
-//   console.log('this is the new state in use effect', newState);
-//   setFormState(newState);
-// }, [selectedTime])
+useEffect(() =>{
+  // console.log("event: ", e.target);
+  const newTimeState2 = { ...formState };
+  newTimeState2["departure_time"] = selectedTime2;
+  console.log('this is the new state in use effect', newTimeState2);
+  setFormState(newTimeState2);
+}, [selectedTime2])
 
   useEffect(() => {
     fetch(`http://localhost:3000/api/timesheets/${params.id}`, {
@@ -121,12 +128,7 @@ useEffect(() => {
       console.log(response); 
       notify('Timesheet Sucessfully Updated')
       history.replace('/home')
-      // const [toaster, setToaster] = useState({
-      
-      // this is where you would add TOAST with a pop up message
-      // set a state this will help to show the TOASTER popup 
-      // import components and show toaster based on state new compnenet will render 
-      // after ok history.replace 
+  
       console.log("PATCH response:", response); // to refresh page add a .then here and then a fetch to fetch like avove and then set the state of timesheets
     });
     
@@ -179,29 +181,32 @@ useEffect(() => {
       
       <KeyboardTimePicker
        inputProps={{ style: { fontSize: 20 } }}
-       InputLabelProps={{ style: { fontSize: 20 } }}
-       margin="normal"
-       name="arrival_time"
-       id="time-picker"
-       label="Arrival Time"
-       className="loginamebox"
-       value={(handleChange, selectedTime)}
-       onChange={(formState.arrival_time, handleTimeChange)}
-       KeyboardButtonProps={{
-         "aria-label": "change time",
+            InputLabelProps={{ style: { fontSize: 20 } }}
+            margin="normal"
+            name="arrival_time"
+            id="time-picker"
+            label="Arrival Time"
+            className="loginamebox"
+            value={(handleChange, selectedTime)}
+            onChange={(formState.arrival_time, handleTimeChange)}
+            KeyboardButtonProps={{
+              "aria-label": "change time",
           }}
         />
 <div>
 
 <KeyboardTimePicker
-          margin="normal"
-          name="departure_time"
-          id="time-picker"
-          label="Departure Time"
-          value={handleChange, selectedTime}
-          onChange={formState.departure_time, handleTimeChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change time',
+         inputProps={{ style: { fontSize: 20 } }}
+         InputLabelProps={{ style: { fontSize: 20 } }}
+         margin="normal"
+         name="departure_time"
+         id="time-picker"
+         label="Departure Time"
+         className="loginamebox"
+         value={(handleChange, selectedTime2)}
+         onChange={(formState.departure_time, handleTimeChange2)}
+         KeyboardButtonProps={{
+           "aria-label": "change time",
           }}
         />
       </div>
