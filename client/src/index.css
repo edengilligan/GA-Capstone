@@ -11,9 +11,15 @@ body {
 
 #standard-basic {
 text-decoration-color: thistle;
-
- 
 }
+
+.list-group-item {
+
+
+
+background-color: #B42626;
+}
+
 
 
 input {
@@ -119,7 +125,7 @@ margin-bottom: -70px;
 }
 
 .list-group-item:hover {
-  background-image: linear-gradient(to right, rgba(426, 116, 116, 0), rgb(245, 209, 209));
+  background-color:#B42626 ;
 }
 
 

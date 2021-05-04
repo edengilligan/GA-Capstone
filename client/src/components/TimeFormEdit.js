@@ -4,19 +4,15 @@ import "react-toastify/dist/ReactToastify.css";
 import { useParams, useHistory } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import { createMuiTheme } from "@material-ui/core/styles";
 import "date-fns";
-import Button from "@material-ui/core/Button";
 import DateFnsUtils from "@date-io/date-fns";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardTimePicker,
-  KeyboardDatePicker,
-} from "@material-ui/pickers";
+import {MuiPickersUtilsProvider,KeyboardTimePicker,KeyboardDatePicker,} from "@material-ui/pickers";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { injectStyle } from "react-toastify/dist/inject-style";
+import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
+import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
+import TimePicker from '@material-ui/lab/TimePicker';
 
 injectStyle();
 
@@ -29,8 +25,6 @@ const TimeFormEdit = (props) => {
   const history = useHistory();
   console.log(params);
   
-
-
   const handleDateChange = (date) => {
     const newState = { ...formState };
     newState.date = date;
@@ -140,6 +134,7 @@ const TimeFormEdit = (props) => {
       <form onSubmit={handleSubmit}>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <Grid container justify="space-around">
+      
             <KeyboardDatePicker
               inputProps={{ style: { fontSize: 20 } }}
               InputLabelProps={{ style: { fontSize: 20 } }}
@@ -154,7 +149,7 @@ const TimeFormEdit = (props) => {
               value={formState.date}
               onChange={handleDateChange}
               KeyboardButtonProps={{ "aria-label": "change date" }}
-            />{" "}
+            /> 
           </Grid>
 
           {/* <div> <TextField className="addtimeform" name="date" id="standard-basic" label="Date" value={formState.date} onChange={handleChange}/></div> */}
@@ -184,6 +179,24 @@ const TimeFormEdit = (props) => {
               onChange={handleChange}
             />
           </div>
+
+
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <TimePicker
+      name="arrival_time"
+        label="Arrival Time"
+        value={formState.arrival_time}
+        onChange={arrivalTime}
+        renderInput={(params) => <TextField {...params} />}
+      />
+    </LocalizationProvider>
+
+
+
+
+
+
+
 
           <KeyboardTimePicker
             inputProps={{ style: { fontSize: 20 } }}

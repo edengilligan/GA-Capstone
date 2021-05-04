@@ -28,11 +28,12 @@ const [loggedIn, setLoggedIn] = useState(false)
   return (
 <Router>
     <div>
+      <div>
     {loggedIn && <MenuItem component={Link} className="list-group-item" to={'/home'}>Existing Timesheets</MenuItem>}
     {loggedIn && <MenuItem component={Link} className="list-group-item" to={'/add'}>Add New Timesheet</MenuItem>}
     {!loggedIn && <MenuItem component={Link} className="list-group-item" to={'/'}>Login</MenuItem>}
     {loggedIn && <MenuItem component={Link} className="list-group-item" onClick={onLogOut} to={'/logout'}>Logout</MenuItem>}
-    
+    </div>
         <Switch>
         <Route exact path="/login">
             <UserForm setLoginHook={setLoggedIn}/>
