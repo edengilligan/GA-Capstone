@@ -10,13 +10,10 @@ import {MuiPickersUtilsProvider,KeyboardTimePicker,KeyboardDatePicker,} from "@m
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { injectStyle } from "react-toastify/dist/inject-style";
-import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
-import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
-import TimePicker from '@material-ui/lab/TimePicker';
 
 injectStyle();
 
-toast.configure();
+toast.configure(); 
 
 const TimeFormEdit = (props) => {
   console.log(props);
@@ -179,21 +176,6 @@ const TimeFormEdit = (props) => {
               onChange={handleChange}
             />
           </div>
-
-
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <TimePicker
-      name="arrival_time"
-        label="Arrival Time"
-        value={formState.arrival_time}
-        onChange={arrivalTime}
-        renderInput={(params) => <TextField {...params} />}
-      />
-    </LocalizationProvider>
-
-
-
-
 
 
 
