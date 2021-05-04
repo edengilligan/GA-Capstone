@@ -7,6 +7,8 @@ import {NewUser} from "./components/User/NewUser"
 import { BrowserRouter as Router, Link, Switch, Route, useHistory } from "react-router-dom";
 import { useState } from "react";
 import "./Style.css";
+import { MenuItem } from '@material-ui/core';
+import { Menu } from '@material-ui/core';
 
 
 
@@ -24,14 +26,13 @@ const [loggedIn, setLoggedIn] = useState(false)
 }
 
   return (
-
-   
 <Router>
     <div>
-        {loggedIn && <Link className="navBar" to="/home">Home</Link>}
-        {loggedIn && <Link className="navBar" to="/add">Add</Link>}
-        {!loggedIn && <Link className="navBar" to="/">Login</Link>}
-        {loggedIn && <Link className="navBar"  onClick={onLogOut} to="/logout">Logout</Link>}
+    {loggedIn && <MenuItem component={Link} className="list-group-item" to={'/home'}>Existing Timesheets</MenuItem>}
+    {loggedIn && <MenuItem component={Link} className="list-group-item" to={'/add'}>Add New Timesheet</MenuItem>}
+    {!loggedIn && <MenuItem component={Link} className="list-group-item" to={'/'}>Login</MenuItem>}
+    {loggedIn && <MenuItem component={Link} className="list-group-item" onClick={onLogOut} to={'/logout'}>Logout</MenuItem>}
+    
         <Switch>
         <Route exact path="/login">
             <UserForm setLoginHook={setLoggedIn}/>
@@ -61,6 +62,7 @@ const [loggedIn, setLoggedIn] = useState(false)
           </Route>
         </Switch>
     </div>
+   
     </Router>
   );
 };
