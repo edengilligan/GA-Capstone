@@ -69,7 +69,7 @@ const AddTimeForm = () => {
   };
   
   const notify = (message) => {
-    toast(message);
+    toast.error(message, {position: toast.POSITION.TOP_RIGHT});
   };
 
   const handleSubmit = (e) => {
@@ -128,6 +128,7 @@ const AddTimeForm = () => {
             margin="normal"
             name="arrival_time"
             id="time-picker"
+            className="arrival_time"
             label="Arrival Time"
             className="loginamebox"
             value={formState.arrival_time}

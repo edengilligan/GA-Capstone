@@ -13,13 +13,44 @@ body {
 text-decoration-color: thistle;
 }
 
+
+.MuiPickersDay-daySelected:active {
+  color: #fff;
+  background-color:  #B42626;
+}
+
+.MuiPickersToolbar-toolbar {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #B42626;
+}
+
+/* .MuiFormControl-root, .MuiTextField-root, .loginamebox {
+  color: red; 
+  background-color: #B42626;
+} */
+
+
+
+.MuiPickersDay-daySelected:hover {
+  background-color: #B42626;
+}
+/* this targeted the menu */
+/* .MuiTouchRipple-root {
+  background-color: #B42626;
+  opacity: 50%;
+} */
+
 .list-group-item {
-
-
-
 background-color: #B42626;
 }
 
+.MuiPickersToolbar-toolbar {
+  background-color: #B42626;
+}
 
 
 input {
@@ -136,3 +167,4 @@ margin-bottom: -70px;
 .textfield{
   color: #B42626;
  }
+

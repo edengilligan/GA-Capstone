@@ -80,7 +80,7 @@ const TimeFormEdit = (props) => {
   };
 
   const notify = (message) => {
-    toast(message);
+    toast.error(message, {position: toast.POSITION.TOP_RIGHT});
   };
 
   const handleSubmit = (e) => {
@@ -117,7 +117,7 @@ const TimeFormEdit = (props) => {
         return response.json();
       })
       .then((response) => {
-        notify("Timesheet Sucessfully Updated");
+        notify("Timesheet Sucessfully Deleted!");
         history.replace("/home");
       });
   };

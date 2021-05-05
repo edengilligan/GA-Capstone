@@ -4,6 +4,10 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { toast } from "react-toastify";
+
+
+toast.configure();
 
 export const NewUser = (props) => {
     const history = useHistory()
