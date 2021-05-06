@@ -23,32 +23,7 @@ export const NewUser = (props) => {
     // the e.target.name is targeting input type name below
   }
 
-  /* 
 
-  user: { 
-    name: "ash", 
-    password: "stacey"
-  }
-
-  */
-
-  /*
-
-  name: "ash"
-  password: "stacey"
-
-  */
-
-  /* 
-   {
-     user: {
-       name: 'ash',
-       password: 'stacey'
-     }
-   }
-
-
-  */
 
   const submitHandler = (e) => { 
     // e.preventDefault();
@@ -60,7 +35,9 @@ export const NewUser = (props) => {
       body: JSON.stringify(
         { user:  {...form}
       })
-    }).then(response => response.json())
+    }).then(response => response.json()).catch(err => {
+      this.setState({ error: err.message });
+    });
     
       }
   return (
