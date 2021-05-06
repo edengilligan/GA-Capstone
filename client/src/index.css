@@ -13,6 +13,13 @@ body {
 text-decoration-color: thistle;
 }
 
+.menu {
+  margin-top: .5%;
+ color: white;
+ background-color: #B42626;
+  text-align: left;
+}
+
 
 .MuiPickersDay-daySelected:active {
   color: #fff;

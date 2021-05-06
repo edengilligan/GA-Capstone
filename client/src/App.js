@@ -43,9 +43,10 @@ const [loggedInName, setLoggedInName] = useState("");
 <Router>
     <div>
       <div>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        Open Menu
-      </Button>
+        <div className="menu">
+      <Button className="menu" aria-controls="simple-menu" href="#text-buttons"   aria-haspopup="true" onClick={handleClick}>
+        MENU
+      </Button> </div>
         <Menu
         id="simple-menu"
         anchorEl={anchorEl}

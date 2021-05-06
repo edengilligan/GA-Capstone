@@ -35,9 +35,8 @@ export const NewUser = (props) => {
       body: JSON.stringify(
         { user:  {...form}
       })
-    }).then(response => response.json()).catch(err => {
-      this.setState({ error: err.message });
-    });
+    }).then(response => response.json())
+
     
       }
   return (
