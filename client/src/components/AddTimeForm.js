@@ -98,6 +98,7 @@ const AddTimeForm = () => {
       <form onSubmit={handleSubmit}>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <Grid container justify="space-around">
+         
             <KeyboardDatePicker
               inputProps={{ style: { fontSize: 20 } }}
               InputLabelProps={{ style: { fontSize: 20 } }}
@@ -107,6 +108,7 @@ const AddTimeForm = () => {
               className="loginamebox"
               margin="normal"
               id="date-picker-inline"
+              InputLabelProps={{ shrink: true }}
               label="Date"
               name="date"
               value={formState.date}
@@ -129,6 +131,7 @@ const AddTimeForm = () => {
             name="arrival_time"
             id="time-picker"
             className="arrival_time"
+            InputLabelProps={{ shrink: true }}
             label="Arrival Time"
             className="loginamebox"
             value={formState.arrival_time}
@@ -147,6 +150,7 @@ const AddTimeForm = () => {
             label="Departure Time"
             className="loginamebox"
             value={formState.departure_time}
+            InputLabelProps={{ shrink: true }}
             onChange={departureTime}
             KeyboardButtonProps={{
               "aria-label": "change time",

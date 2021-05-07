@@ -158,6 +158,7 @@ const TimeFormEdit = (props) => {
               className="loginamebox"
               name="client"
               id="standard-basic"
+
               label="Client"
               value={formState.client}
               onChange={handleChange}
@@ -187,6 +188,7 @@ const TimeFormEdit = (props) => {
             name="arrival_time"
             id="time-picker"
             label="Arrival Time"
+            InputLabelProps={{ shrink: true }}
             className="loginamebox"
             value={formState.arrival_time}
             onChange={arrivalTime}
@@ -202,6 +204,7 @@ const TimeFormEdit = (props) => {
               name="departure_time"
               id="time-picker"
               label="Departure Time"
+              InputLabelProps={{ shrink: true }}
               className="loginamebox"
               value={formState.departure_time}
               onChange={departureTime}

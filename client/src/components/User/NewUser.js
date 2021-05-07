@@ -23,10 +23,12 @@ export const NewUser = (props) => {
     // the e.target.name is targeting input type name below
   }
 
-
+  const notify = (message) => {
+    toast.error(message, {position: toast.POSITION.TOP_RIGHT});
+  };
 
   const submitHandler = (e) => { 
-    // e.preventDefault();
+    e.preventDefault();
     fetch('http://localhost:3000/api/users', {
       method: "POST",
       headers: {
@@ -35,7 +37,13 @@ export const NewUser = (props) => {
       body: JSON.stringify(
         { user:  {...form}
       })
-    }).then(response => response.json())
+    })
+      // .then(response => response.json())
+    .then((response) => {
+      console.log(response);
+      notify("User Sucessfully Added, now log in");
+      history.replace("/login");
+    });
 
     
       }
@@ -43,6 +51,7 @@ export const NewUser = (props) => {
      
     <div>
     <form onSubmit={submitHandler} noValidate autoComplete="off" >
+      <div><h3>Sign Up</h3></div>
       <div className="container px-4 py-5 mx-auto">
                     <img className="logo" src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"></img>
                         <div> <TextField inputProps={{style: {fontSize: 20}}}

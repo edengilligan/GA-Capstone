@@ -56,6 +56,7 @@ export const UserForm = (props) => {
     <div>
       <form onSubmit={submitHandler} noValidate autoComplete="off">
         <div className="container px-4 py-5 mx-auto">
+        <div><h3>Login</h3></div>
           <img
             className="logo"
             src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"
