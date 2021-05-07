@@ -1,29 +1,33 @@
 @import "react-alice-carousel/lib/alice-carousel.css";
 
 body {
-
   text-align: center;
-  color: #B42626; 
-  background-color: #FFEEEE;
-  font-family: 'Alegreya', serif;
-  background-repeat: repeat;   
-} 
-
-#standard-basic {
-text-decoration-color: thistle;
+  color: #b42626;
+  background-color: #ffeeee;
+  font-family: "Alegreya", serif;
+  background-repeat: repeat;
 }
 
-.menu {
-  margin-top: .5%;
- color: white;
- background-color: #B42626;
+#standard-basic {
+  text-decoration-color: thistle;
+}
+
+.dropdown {
+  margin-top: 2%;
+  color: #b42626;
+  margin-left: 2%;
   text-align: left;
 }
 
+.welcome {
+  text-align: center;
+  margin-top: -30px;
+  margin-bottom: 0px;
+}
 
 .MuiPickersDay-daySelected:active {
   color: #fff;
-  background-color:  #B42626;
+  background-color: #b42626;
 }
 
 .MuiPickersToolbar-toolbar {
@@ -32,146 +36,132 @@ text-decoration-color: thistle;
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  background-color: #B42626;
+  background-color: #b42626;
 }
-
-/* .MuiFormControl-root, .MuiTextField-root, .loginamebox {
-  color: red; 
-  background-color: #B42626;
-} */
-
 
 
 .MuiPickersDay-daySelected:hover {
-  background-color: #B42626;
+  background-color: #b42626;
 }
-/* this targeted the menu */
-/* .MuiTouchRipple-root {
-  background-color: #B42626;
-  opacity: 50%;
-} */
 
 .list-group-item {
-background-color: #B42626;
+  background-color: #b42626;
 }
 
 .MuiPickersToolbar-toolbar {
-  background-color: #B42626;
+  background-color: #b42626;
 }
-
 
 input {
   /* default */
-  caret-color: #B42626;
+  caret-color: #b42626;
 }
 
 input {
   /* custom */
-  caret-color: #B42626;
+  caret-color: #b42626;
 }
-
 
 .addtimeform {
-  color: #B42626; 
-}
-
-.Toastify__toast-container--top-center {
-  
+  color: #b42626;
 }
 
 .navBar {
-  color: #B42626; 
+  color: #b42626;
   font-size: 150%;
-border-left: 100%;
-
-  
+  border-left: 100%;
 }
 
 .timesheetList {
-margin-left: 45%;
-border-radius: 50%;
-margin-right: 10%;
-padding: 10%;
-width: 80px; 
-height: 80px; 
-/* background-color: #B42626;  */
-color: #B42626;
-
+  margin-left: 45%;
+  border-radius: 50%;
+  margin-right: 10%;
+  padding: 10%;
+  width: 80px;
+  height: 80px;
+  /* background-color: #B42626;  */
+  color: #b42626;
 }
 
 .logo {
-margin-bottom: -70px;
-  }
-
-.loginamebox{
-  width: 30%;
-  padding-right: 50%; 
+  margin-bottom: -70px;
 }
 
+.loginamebox {
+  width: 30%;
+  padding-right: 50%;
+}
 
 .loginamebox:active {
-  color:#B42626; 
+  color: #b42626;
 }
 
 .loginamebox:hover {
-  color:#B42626; 
+  color: #b42626;
 }
 
 .signupbutton {
-  padding: 18px; 
+  padding: 18px;
   margin-left: 5px;
   margin-top: 30px;
   margin-bottom: 5%;
   border-radius: 50%;
-  border: #B42626;
+  border: #b42626;
 }
 
 .signupbutton:hover {
-  background-image: linear-gradient(to right, rgba(426, 116, 116, 0), rgb(245, 209, 209));
+  background-image: linear-gradient(
+    to right,
+    rgba(426, 116, 116, 0),
+    rgb(245, 209, 209)
+  );
 }
 
 .signupbutton2 {
-  padding: 18px; 
+  padding: 18px;
   margin-left: 5px;
   margin-top: 10px;
   border-radius: 70%;
-  border: #B42626;
-  
-  
+  border: #b42626;
 }
 
 .signupbutton2:hover {
-  background-image: linear-gradient(to right, rgba(426, 116, 116, 0), rgb(245, 209, 209));
+  background-image: linear-gradient(
+    to right,
+    rgba(426, 116, 116, 0),
+    rgb(245, 209, 209)
+  );
 }
 
 .trashbutton {
-  padding: 100px; 
+  padding: 100px;
   margin-left: 5px;
   margin-top: 10px;
   border-radius: 70%;
-  border: #B42626;
+  border: #b42626;
   margin-bottom: 10%;
-  
 }
 
 .list-group-item {
   margin-top: 15px;
   margin-left: 32%;
   width: 30%;
-  background-color:#B42626 ;
-  color: #FFEEEE;
+  background-color: #b42626;
+  color: #ffeeee;
 }
 
 .list-group-item:hover {
-  background-color:#B42626 ;
+  background-color: #b42626;
 }
-
 
 .trashbutton:hover {
-  background-image: linear-gradient(to right, rgba(426, 116, 116, 0), rgb(245, 209, 209));
+  background-image: linear-gradient(
+    to right,
+    rgba(426, 116, 116, 0),
+    rgb(245, 209, 209)
+  );
 }
 
-.textfield{
-  color: #B42626;
- }
-
+.textfield {
+  color: #b42626;
+}
