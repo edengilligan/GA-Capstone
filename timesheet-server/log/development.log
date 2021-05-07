@@ -18081,3 +18081,35 @@ Processing by Api::AuthController#login as */*
 Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 546)
 
 
+Started POST "/api/auth/login" for ::1 at 2021-05-08 00:02:52 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"hngbfvcsxz", "password"=>"[FILTERED]", "auth"=>{"name"=>"hngbfvcsxz", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "hngbfvcsxz"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 404 Not Found in 30ms (Views: 0.2ms | ActiveRecord: 15.4ms | Allocations: 2661)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 00:03:42 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"hngbfvcsxz", "password"=>"[FILTERED]", "auth"=>{"name"=>"hngbfvcsxz", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "hngbfvcsxz"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 545)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 00:06:37 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"eden", "password"=>"[FILTERED]", "auth"=>{"name"=>"eden", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "eden"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 200 OK in 229ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 662)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 00:06:38 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (1.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 1.3ms | Allocations: 2236)
+
+
