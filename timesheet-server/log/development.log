@@ -18278,3 +18278,11 @@ Processing by Api::TimesheetsController#index as */*
 Completed 200 OK in 60ms (Views: 56.8ms | ActiveRecord: 2.3ms | Allocations: 2216)
 
 
+Started GET "/api/timesheets/58" for ::1 at 2021-05-08 10:39:33 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"id"=>"58", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.9ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:21:in `show'
+Completed 200 OK in 97ms (Views: 1.5ms | ActiveRecord: 34.8ms | Allocations: 2934)
+
+
