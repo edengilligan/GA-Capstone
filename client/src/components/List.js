@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
-import moment from "moment"; 
+import "react-alice-carousel/lib/alice-carousel.css";
+import moment from "moment";
 
 export const List = () => {
   const [timesheets, setTimesheets] = useState([]);
@@ -11,7 +10,7 @@ export const List = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "token": window.localStorage.getItem('token')
+        token: window.localStorage.getItem("token"),
       },
     })
       .then((response) => {
@@ -19,29 +18,35 @@ export const List = () => {
         if (response.status === 200) {
           return response.json();
         } else {
-          return []; 
+          return [];
         }
       })
       .then((timesheets) => {
         console.log("timesheets:", timesheets);
         setTimesheets(timesheets);
-      }).catch((error) => console.log("CATCH error:", error));
-  }, [])
+      })
+      .catch((error) => console.log("CATCH error:", error));
+  }, []);
   return (
     <div>
-     
-      <img className="logo" src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"></img>
-      
+      <img
+        className="logo"
+        src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"
+      ></img>
+
       <ul>
         {timesheets.map((el, index) => (
           <ul key={index}>
-            <Link to={`timesheet/edit/${el.id}`}><li class="list-group-item list-group-item-action list-group-item-success">{el.client}<div></div>{moment().format("MMM Do YY")}</li></Link>
-            
+            <Link to={`timesheet/edit/${el.id}`}>
+              <li class="list-group-item list-group-item-action list-group-item-success">
+                {el.client}
+                <div></div>
+                {moment().format("MMM Do YY")}
+              </li>
+            </Link>
           </ul>
         ))}
-        
       </ul>
     </div>
   );
 };
-

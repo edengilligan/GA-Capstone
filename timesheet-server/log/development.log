@@ -18286,3 +18286,223 @@ Processing by Api::TimesheetsController#show as */*
 Completed 200 OK in 97ms (Views: 1.5ms | ActiveRecord: 34.8ms | Allocations: 2934)
 
 
+Started POST "/api/users" for ::1 at 2021-05-08 11:19:07 +1000
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"gacapstone", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "gacapstone"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mUser Create (5.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest") VALUES ($1, $2) RETURNING "id"[0m  [["name", "gacapstone"], ["password_digest", "$2a$12$7RL6adP6oCFMZ.OS1zjsouMBY1ArpFZq6E4gKJ9cyXieFSFpQb/Ie"]]
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "gacapstone"], ["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:10:in `create'
+Completed 201 Created in 267ms (Views: 0.2ms | ActiveRecord: 24.5ms | Allocations: 5714)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 11:19:16 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"gacapstone", "password"=>"[FILTERED]", "auth"=>{"name"=>"gacapstone", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "gacapstone"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 200 OK in 252ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 718)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 11:19:16 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.6ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.6ms | Allocations: 2238)
+
+
+Started POST "/api/timesheets" for ::1 at 2021-05-08 11:54:51 +1000
+Processing by Api::TimesheetsController#create as */*
+  Parameters: {"date"=>"2021-05-08T01:54:00.000Z", "staff_attendance"=>"GA ", "client"=>"GA Capstone", "travel_information"=>"", "arrival_time"=>"2021-05-07T16:20:12.146Z", "departure_time"=>"2021-05-07T18:34:12.151Z", "products_used"=>"Nothing ", "receipts"=>"Test", "notes"=>"Test", "action_next_visit"=>"Test", "written_by"=>"Eden", "timesheet"=>{"date"=>"2021-05-08T01:54:00.000Z", "staff_attendance"=>"GA ", "client"=>"GA Capstone", "travel_information"=>"", "arrival_time"=>"2021-05-07T16:20:12.146Z", "departure_time"=>"2021-05-07T18:34:12.151Z", "products_used"=>"Nothing ", "receipts"=>"Test", "notes"=>"Test", "action_next_visit"=>"Test", "written_by"=>"Eden"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/timesheets_controller.rb:10:in `create'
+  [1m[36mTimesheets Create (18.4ms)[0m  [1m[32mINSERT INTO "timesheets" ("date", "client", "travel_information", "arrival_time", "departure_time", "products_used", "receipts", "notes", "action_next_visit", "written_by", "created_at", "updated_at", "staff_attendance") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["date", "2021-05-08T01:54:00.000Z"], ["client", "GA Capstone"], ["travel_information", ""], ["arrival_time", "2021-05-07T16:20:12.146Z"], ["departure_time", "2021-05-07T18:34:12.151Z"], ["products_used", "Nothing "], ["receipts", "Test"], ["notes", "Test"], ["action_next_visit", "Test"], ["written_by", "Eden"], ["created_at", "2021-05-08 01:54:51.844615"], ["updated_at", "2021-05-08 01:54:51.844615"], ["staff_attendance", "GA "]]
+  ↳ app/controllers/api/timesheets_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/timesheets_controller.rb:10:in `create'
+Completed 200 OK in 42ms (Views: 0.2ms | ActiveRecord: 26.9ms | Allocations: 3969)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 11:54:51 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.7ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.7ms | Allocations: 2477)
+
+
+Started GET "/api/timesheets/68" for ::1 at 2021-05-08 11:54:53 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"id"=>"68", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:21:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 829)
+
+
+Started PATCH "/api/timesheets/68" for ::1 at 2021-05-08 11:55:00 +1000
+Processing by Api::TimesheetsController#update as */*
+  Parameters: {"id"=>"68", "date"=>"2021-05-08T01:54:00.000Z", "client"=>"GA Capstone", "travel_information"=>"", "arrival_time"=>"2021-05-07T16:20:12.146Z", "departure_time"=>"2021-05-07T18:34:12.151Z", "products_used"=>"Nothing ", "receipts"=>"$20 Petrol", "notes"=>"Test", "action_next_visit"=>"Test", "written_by"=>"Eden", "created_at"=>"2021-05-08T01:54:51.844Z", "updated_at"=>"2021-05-08T01:54:51.844Z", "staff_attendance"=>"GA ", "timesheet"=>{"id"=>"68", "date"=>"2021-05-08T01:54:00.000Z", "client"=>"GA Capstone", "travel_information"=>"", "arrival_time"=>"2021-05-07T16:20:12.146Z", "departure_time"=>"2021-05-07T18:34:12.151Z", "products_used"=>"Nothing ", "receipts"=>"$20 Petrol", "notes"=>"Test", "action_next_visit"=>"Test", "written_by"=>"Eden", "created_at"=>"2021-05-08T01:54:51.844Z", "updated_at"=>"2021-05-08T01:54:51.844Z", "staff_attendance"=>"GA "}}
+  [1m[36mTimesheets Load (0.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/timesheets_controller.rb:26:in `update'
+  [1m[36mTimesheets Update (30.3ms)[0m  [1m[33mUPDATE "timesheets" SET "receipts" = $1, "updated_at" = $2 WHERE "timesheets"."id" = $3[0m  [["receipts", "$20 Petrol"], ["updated_at", "2021-05-08 01:55:00.780482"], ["id", 68]]
+  ↳ app/controllers/api/timesheets_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/timesheets_controller.rb:26:in `update'
+Completed 200 OK in 45ms (Views: 0.2ms | ActiveRecord: 36.4ms | Allocations: 2360)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 11:55:00 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.4ms | Allocations: 2432)
+
+
+Started GET "/api/timesheets/68" for ::1 at 2021-05-08 11:55:02 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"id"=>"68", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:21:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 799)
+
+
+Started DELETE "/api/timesheets/68" for ::1 at 2021-05-08 11:55:04 +1000
+Processing by Api::TimesheetsController#destroy as */*
+  Parameters: {"id"=>"68", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.2ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/timesheets_controller.rb:31:in `destroy'
+  [1m[36mTimesheets Destroy (0.2ms)[0m  [1m[31mDELETE FROM "timesheets" WHERE "timesheets"."id" = $1[0m  [["id", 68]]
+  ↳ app/controllers/api/timesheets_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/timesheets_controller.rb:31:in `destroy'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 6.3ms | Allocations: 1989)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 11:55:04 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.6ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.6ms | Allocations: 2216)
+
+
+Started POST "/api/users" for ::1 at 2021-05-08 12:06:44 +1000
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"12345678", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "12345678"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest") VALUES ($1, $2) RETURNING "id"[0m  [["name", "12345678"], ["password_digest", "$2a$12$LRmtuBRxopFbo/Ty1wlH4eWMfRs0XY7FCzvev9o6N5tXiNUKxo0OG"]]
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "12345678"], ["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:10:in `create'
+Completed 201 Created in 316ms (Views: 0.2ms | ActiveRecord: 14.5ms | Allocations: 5345)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 12:06:52 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"12345678", "password"=>"[FILTERED]", "auth"=>{"name"=>"12345678", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "12345678"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 200 OK in 260ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 722)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 12:06:53 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (1.9ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 1.9ms | Allocations: 2236)
+
+
+Started GET "/api/timesheets/19" for ::1 at 2021-05-08 12:06:56 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"id"=>"19", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:21:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 801)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 12:06:59 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 2216)
+
+
+Started GET "/api/timesheets/65" for ::1 at 2021-05-08 12:07:01 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"id"=>"65", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:21:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 799)
+
+
+Started DELETE "/api/timesheets/65" for ::1 at 2021-05-08 12:07:03 +1000
+Processing by Api::TimesheetsController#destroy as */*
+  Parameters: {"id"=>"65", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/timesheets_controller.rb:31:in `destroy'
+  [1m[36mTimesheets Destroy (0.5ms)[0m  [1m[31mDELETE FROM "timesheets" WHERE "timesheets"."id" = $1[0m  [["id", 65]]
+  ↳ app/controllers/api/timesheets_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/timesheets_controller.rb:31:in `destroy'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 1968)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 12:07:03 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 2000)
+
+
+Started GET "/api/timesheets/19" for ::1 at 2021-05-08 12:07:05 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"id"=>"19", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.2ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:21:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 798)
+
+
+Started PATCH "/api/timesheets/19" for ::1 at 2021-05-08 12:07:08 +1000
+Processing by Api::TimesheetsController#update as */*
+  Parameters: {"id"=>"19", "date"=>"7/9/20", "client"=>"Sarah", "travel_information"=>"", "arrival_time"=>"2021-05-04T06:18:03.819Z", "departure_time"=>"2021-05-04T12:18:03.825Z", "products_used"=>"Nothing ", "receipts"=>"None", "notes"=>"All looking good ", "action_next_visit"=>"Don't need to go back for a while", "written_by"=>"Eden", "created_at"=>"2021-04-22T08:05:58.799Z", "updated_at"=>"2021-05-04T10:18:42.407Z", "staff_attendance"=>"Eden", "timesheet"=>{"id"=>"19", "date"=>"7/9/20", "client"=>"Sarah", "travel_information"=>"", "arrival_time"=>"2021-05-04T06:18:03.819Z", "departure_time"=>"2021-05-04T12:18:03.825Z", "products_used"=>"Nothing ", "receipts"=>"None", "notes"=>"All looking good ", "action_next_visit"=>"Don't need to go back for a while", "written_by"=>"Eden", "created_at"=>"2021-04-22T08:05:58.799Z", "updated_at"=>"2021-05-04T10:18:42.407Z", "staff_attendance"=>"Eden"}}
+  [1m[36mTimesheets Load (0.2ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/timesheets_controller.rb:26:in `update'
+  [1m[36mTimesheets Update (0.8ms)[0m  [1m[33mUPDATE "timesheets" SET "client" = $1, "updated_at" = $2 WHERE "timesheets"."id" = $3[0m  [["client", "Sarah"], ["updated_at", "2021-05-08 02:07:08.240673"], ["id", 19]]
+  ↳ app/controllers/api/timesheets_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/timesheets_controller.rb:26:in `update'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 6.9ms | Allocations: 2314)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 12:07:08 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 2000)
+
+

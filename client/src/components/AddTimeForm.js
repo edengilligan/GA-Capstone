@@ -20,12 +20,10 @@ import {
 import Container from "@material-ui/core/Container";
 import { toast } from "react-toastify";
 
-
 toast.configure();
 
 const AddTimeForm = () => {
   const history = useHistory();
-
 
   const [formState, setFormState] = useState({
     date: "",
@@ -51,14 +49,12 @@ const AddTimeForm = () => {
     const newState = { ...formState };
     newState.arrival_time = date;
     setFormState(newState);
-
   };
 
   const departureTime = (date) => {
     const newState = { ...formState };
     newState.departure_time = date;
     setFormState(newState);
-   
   };
 
   const handleChange = (e) => {
@@ -67,9 +63,9 @@ const AddTimeForm = () => {
     newState[e.target.name] = e.target.value;
     setFormState(newState);
   };
-  
+
   const notify = (message) => {
-    toast.error(message, {position: toast.POSITION.TOP_RIGHT});
+    toast.error(message, { position: toast.POSITION.TOP_RIGHT });
   };
 
   const handleSubmit = (e) => {
@@ -90,7 +86,6 @@ const AddTimeForm = () => {
 
   return (
     <div>
-    
       <img
         className="logo"
         src="https://media.giphy.com/media/Gh5KijQtkU5Y9Jd6Xo/source.gif"
@@ -98,7 +93,6 @@ const AddTimeForm = () => {
       <form onSubmit={handleSubmit}>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <Grid container justify="space-around">
-         
             <KeyboardDatePicker
               inputProps={{ style: { fontSize: 20 } }}
               InputLabelProps={{ style: { fontSize: 20 } }}
@@ -117,11 +111,31 @@ const AddTimeForm = () => {
             />
           </Grid>
 
-          <div> <TextField inputProps={{ style: { fontSize: 20 } }}InputLabelProps={{ style: { fontSize: 20 } }}className="loginamebox" name="client" id="standard-basic" label="Client" value={formState.client} onChange={handleChange}/></div>
-         
-          <div><TextField inputProps={{ style: { fontSize: 20 } }} InputLabelProps={{ style: { fontSize: 20 } }}className="loginamebox" name="staff_attendance" id="standard-basic" label="Staff Attendance"
+          <div>
+            {" "}
+            <TextField
+              inputProps={{ style: { fontSize: 20 } }}
+              InputLabelProps={{ style: { fontSize: 20 } }}
+              className="loginamebox"
+              name="client"
+              id="standard-basic"
+              label="Client"
+              value={formState.client}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div>
+            <TextField
+              inputProps={{ style: { fontSize: 20 } }}
+              InputLabelProps={{ style: { fontSize: 20 } }}
+              className="loginamebox"
+              name="staff_attendance"
+              id="standard-basic"
+              label="Staff Attendance"
               value={formState.staff_attendance}
-              onChange={handleChange} />
+              onChange={handleChange}
+            />
           </div>
 
           <KeyboardTimePicker
@@ -140,26 +154,25 @@ const AddTimeForm = () => {
               "aria-label": "change time",
             }}
           />
-<div>
-<KeyboardTimePicker
-            inputProps={{ style: { fontSize: 20 } }}
-            InputLabelProps={{ style: { fontSize: 20 } }}
-            margin="normal"
-            name="departure_time"
-            id="time-picker"
-            label="Departure Time"
-            className="loginamebox"
-            value={formState.departure_time}
-            InputLabelProps={{ shrink: true }}
-            onChange={departureTime}
-            KeyboardButtonProps={{
-              "aria-label": "change time",
-            }}
-          />
-        </div> 
+          <div>
+            <KeyboardTimePicker
+              inputProps={{ style: { fontSize: 20 } }}
+              InputLabelProps={{ style: { fontSize: 20 } }}
+              margin="normal"
+              name="departure_time"
+              id="time-picker"
+              label="Departure Time"
+              className="loginamebox"
+              value={formState.departure_time}
+              InputLabelProps={{ shrink: true }}
+              onChange={departureTime}
+              KeyboardButtonProps={{
+                "aria-label": "change time",
+              }}
+            />
+          </div>
         </MuiPickersUtilsProvider>
         <div>
-          {" "}
           <TextField
             inputProps={{ style: { fontSize: 20 } }}
             InputLabelProps={{ style: { fontSize: 20 } }}
@@ -172,7 +185,6 @@ const AddTimeForm = () => {
           />
         </div>
         <div>
-          {" "}
           <TextField
             inputProps={{ style: { fontSize: 20 } }}
             InputLabelProps={{ style: { fontSize: 20 } }}
@@ -185,7 +197,6 @@ const AddTimeForm = () => {
           />
         </div>
         <div>
-          {" "}
           <TextField
             inputProps={{ style: { fontSize: 20 } }}
             InputLabelProps={{ style: { fontSize: 20 } }}
@@ -198,7 +209,6 @@ const AddTimeForm = () => {
           />
         </div>
         <div>
-          {" "}
           <TextField
             inputProps={{ style: { fontSize: 20 } }}
             InputLabelProps={{ style: { fontSize: 20 } }}
@@ -211,7 +221,6 @@ const AddTimeForm = () => {
           />
         </div>
         <div>
-          {" "}
           <TextField
             inputProps={{ style: { fontSize: 20 } }}
             InputLabelProps={{ style: { fontSize: 20 } }}
@@ -224,14 +233,11 @@ const AddTimeForm = () => {
           />
         </div>
         <div>
-          {" "}
           <button type="submit" className="signupbutton">
-            {" "}
-            Add{" "}
+            Add
           </button>
         </div>
       </form>
-      {/* </Container> */}
     </div>
   );
 };

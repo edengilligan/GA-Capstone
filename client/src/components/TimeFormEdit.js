@@ -6,14 +6,18 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
-import {MuiPickersUtilsProvider,KeyboardTimePicker,KeyboardDatePicker,} from "@material-ui/pickers";
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from "@material-ui/pickers";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { injectStyle } from "react-toastify/dist/inject-style";
 
 injectStyle();
 
-toast.configure(); 
+toast.configure();
 
 const TimeFormEdit = (props) => {
   console.log(props);
@@ -21,7 +25,7 @@ const TimeFormEdit = (props) => {
   const params = useParams();
   const history = useHistory();
   console.log(params);
-  
+
   const handleDateChange = (date) => {
     const newState = { ...formState };
     newState.date = date;
@@ -32,14 +36,12 @@ const TimeFormEdit = (props) => {
     const newState = { ...formState };
     newState.arrival_time = date;
     setFormState(newState);
-
   };
 
   const departureTime = (date) => {
     const newState = { ...formState };
     newState.departure_time = date;
     setFormState(newState);
-   
   };
 
   const [formState, setFormState] = useState({
@@ -80,7 +82,7 @@ const TimeFormEdit = (props) => {
   };
 
   const notify = (message) => {
-    toast.error(message, {position: toast.POSITION.TOP_RIGHT});
+    toast.error(message, { position: toast.POSITION.TOP_RIGHT });
   };
 
   const handleSubmit = (e) => {
@@ -101,7 +103,7 @@ const TimeFormEdit = (props) => {
       notify("Timesheet Sucessfully Updated");
       history.replace("/home");
 
-      console.log("PATCH response:", response); // to refresh page add a .then here and then a fetch to fetch like avove and then set the state of timesheets
+      console.log("PATCH response:", response); 
     });
   };
 
@@ -131,7 +133,6 @@ const TimeFormEdit = (props) => {
       <form onSubmit={handleSubmit}>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <Grid container justify="space-around">
-      
             <KeyboardDatePicker
               inputProps={{ style: { fontSize: 20 } }}
               InputLabelProps={{ style: { fontSize: 20 } }}
@@ -141,31 +142,26 @@ const TimeFormEdit = (props) => {
               format="MM/dd/yyyy"
               margin="normal"
               id="date-picker-inline"
-              // label="Date picker inline"
               name="date"
               value={formState.date}
               onChange={handleDateChange}
               KeyboardButtonProps={{ "aria-label": "change date" }}
-            /> 
+            />
           </Grid>
 
-          {/* <div> <TextField className="addtimeform" name="date" id="standard-basic" label="Date" value={formState.date} onChange={handleChange}/></div> */}
           <div>
-            {" "}
             <TextField
               inputProps={{ style: { fontSize: 20 } }}
               InputLabelProps={{ style: { fontSize: 20 } }}
               className="loginamebox"
               name="client"
               id="standard-basic"
-
               label="Client"
               value={formState.client}
               onChange={handleChange}
             />
           </div>
           <div>
-            {" "}
             <TextField
               inputProps={{ style: { fontSize: 20 } }}
               InputLabelProps={{ style: { fontSize: 20 } }}
@@ -177,9 +173,6 @@ const TimeFormEdit = (props) => {
               onChange={handleChange}
             />
           </div>
-
-
-
 
           <KeyboardTimePicker
             inputProps={{ style: { fontSize: 20 } }}
@@ -215,9 +208,8 @@ const TimeFormEdit = (props) => {
           </div>
         </MuiPickersUtilsProvider>
 
-        {/* <div> <TextField className="addtimeform" name="departure_time" id="standard-basic" label="Departure Time" value={formState.departure_time} onChange={handleChange}/></div> */}
+       
         <div>
-          {" "}
           <TextField
             inputProps={{ style: { fontSize: 20 } }}
             InputLabelProps={{ style: { fontSize: 20 } }}
@@ -230,7 +222,6 @@ const TimeFormEdit = (props) => {
           />
         </div>
         <div>
-          {" "}
           <TextField
             inputProps={{ style: { fontSize: 20 } }}
             InputLabelProps={{ style: { fontSize: 20 } }}
@@ -243,7 +234,6 @@ const TimeFormEdit = (props) => {
           />
         </div>
         <div>
-          {" "}
           <TextField
             inputProps={{ style: { fontSize: 20 } }}
             InputLabelProps={{ style: { fontSize: 20 } }}
@@ -256,7 +246,6 @@ const TimeFormEdit = (props) => {
           />
         </div>
         <div>
-          {" "}
           <TextField
             inputProps={{ style: { fontSize: 20 } }}
             InputLabelProps={{ style: { fontSize: 20 } }}
@@ -269,7 +258,6 @@ const TimeFormEdit = (props) => {
           />
         </div>
         <div>
-          {" "}
           <TextField
             inputProps={{ style: { fontSize: 20 } }}
             InputLabelProps={{ style: { fontSize: 20 } }}
@@ -285,9 +273,7 @@ const TimeFormEdit = (props) => {
         <button type="submit" className="signupbutton2">
           Edit
         </button>
-        {/* <button className ="delete"onClick={handleDelete} type="submit" >Delete</button> */}
       </form>
-      {/* <button type="submit" onClick={handleDelete} className='signupbutton2'>Delete</button> */}
       <IconButton
         className="trashbutton"
         type="submit"
