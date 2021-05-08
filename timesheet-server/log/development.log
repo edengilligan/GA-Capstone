@@ -18113,3 +18113,168 @@ Processing by Api::TimesheetsController#index as */*
 Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 1.3ms | Allocations: 2236)
 
 
+Started GET "/api/timesheets" for ::1 at 2021-05-08 09:13:28 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.1ms | Allocations: 131)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 09:13:33 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | Allocations: 128)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 09:13:40 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | Allocations: 128)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 09:41:41 +1000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"eden", "password"=>"[FILTERED]", "auth"=>{"name"=>"eden", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (12.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "eden"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 200 OK in 296ms (Views: 0.4ms | ActiveRecord: 15.9ms | Allocations: 7707)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 09:41:42 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (7.2ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 78ms (Views: 47.0ms | ActiveRecord: 27.9ms | Allocations: 10345)
+
+
+Started GET "/api/timesheets/47" for ::1 at 2021-05-08 09:41:43 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"id"=>"47", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:21:in `show'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 923)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 09:41:54 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (0.5ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.5ms | Allocations: 2235)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 09:56:05 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"jhygtfredsfgty", "password"=>"[FILTERED]", "auth"=>{"name"=>"jhygtfredsfgty", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "jhygtfredsfgty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 404 Not Found in 32ms (Views: 0.3ms | ActiveRecord: 10.3ms | Allocations: 2678)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 09:59:34 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"jhygtfredsfgty", "password"=>"[FILTERED]", "auth"=>{"name"=>"jhygtfredsfgty", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "jhygtfredsfgty"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 404 Not Found in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 562)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 10:09:30 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"kujhygt", "password"=>"[FILTERED]", "auth"=>{"name"=>"kujhygt", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "kujhygt"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 404 Not Found in 53ms (Views: 0.2ms | ActiveRecord: 14.9ms | Allocations: 2608)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 10:10:37 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"jhgf", "password"=>"[FILTERED]", "auth"=>{"name"=>"jhgf", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "jhgf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 404 Not Found in 7ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 545)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 10:11:25 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"jhgdffgh", "password"=>"[FILTERED]", "auth"=>{"name"=>"jhgdffgh", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "jhgdffgh"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 404 Not Found in 11ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 545)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 10:11:29 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 145)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 10:11:39 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"eden", "password"=>"[FILTERED]", "auth"=>{"name"=>"eden", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "eden"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 200 OK in 297ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 662)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 10:11:40 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (10.7ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 72ms (Views: 60.2ms | ActiveRecord: 10.7ms | Allocations: 2238)
+
+
+Started GET "/api/timesheets/58" for ::1 at 2021-05-08 10:11:41 +1000
+Processing by Api::TimesheetsController#show as */*
+  Parameters: {"id"=>"58", "timesheet"=>{}}
+  [1m[36mTimesheets Load (0.4ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/api/timesheets_controller.rb:21:in `show'
+Completed 200 OK in 14ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 803)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 10:11:46 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"kjhygtfr", "password"=>"[FILTERED]", "auth"=>{"name"=>"kjhygtfr", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "kjhygtfr"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 404 Not Found in 12ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 547)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 10:14:01 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"kjhgfrdsbfg", "password"=>"[FILTERED]", "auth"=>{"name"=>"kjhgfrdsbfg", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "kjhgfrdsbfg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 548)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 10:14:42 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"kjhgfrdsbfg", "password"=>"[FILTERED]", "auth"=>{"name"=>"kjhgfrdsbfg", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "kjhgfrdsbfg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 545)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-05-08 10:14:50 +1000
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"eden", "password"=>"[FILTERED]", "auth"=>{"name"=>"eden", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "eden"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 200 OK in 310ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 662)
+
+
+Started GET "/api/timesheets" for ::1 at 2021-05-08 10:14:51 +1000
+Processing by Api::TimesheetsController#index as */*
+  Parameters: {"timesheet"=>{}}
+  [1m[36mTimesheets Load (2.3ms)[0m  [1m[34mSELECT "timesheets".* FROM "timesheets"[0m
+  ↳ app/controllers/api/timesheets_controller.rb:5:in `index'
+Completed 200 OK in 60ms (Views: 56.8ms | ActiveRecord: 2.3ms | Allocations: 2216)
+
+

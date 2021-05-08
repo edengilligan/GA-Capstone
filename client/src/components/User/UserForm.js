@@ -5,11 +5,10 @@ import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-toast.configure(); 
-
+toast.configure();
 
 const notify = (message) => {
-  toast.error(message, {position: toast.POSITION.TOP_RIGHT});
+  toast.error(message, { position: toast.POSITION.TOP_RIGHT });
 };
 
 export const UserForm = (props) => {
@@ -37,17 +36,18 @@ export const UserForm = (props) => {
       body: JSON.stringify(form),
     })
       .then((response) => {
-        if (!response.ok) { 
-          notify("YOU AREN'T ALLOWED!@!!!!!");
+        if (!response.ok) {
+          notify("Wrong User/Password");
+          return;
         }
-
-        return response.json()})
+        return response.json();
+      })
       .then((data) => {
-        props.setLoggedInName(data.user.name);
-        window.localStorage.setItem("token", data.token);
-        console.log("props check:", props);
-        props.setLoginHook(true);
-        if (data.token) {
+        if (data && data.token) {
+          props.setLoggedInName(data.user.name);
+          window.localStorage.setItem("token", data.token);
+          console.log("props check:", props);
+          props.setLoginHook(true);
           history.replace("/home");
         }
       });
